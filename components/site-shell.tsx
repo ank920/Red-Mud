@@ -41,9 +41,11 @@ export function SiteShell({ children }: SiteShellProps) {
               aria-controls="primary-navigation"
               onClick={() => setMobileNavOpen((prev) => !prev)}
             >
-              <span className="menu-toggle-bar" />
-              <span className="menu-toggle-bar" />
-              <span className="menu-toggle-bar" />
+              <div className="menu-toggle-icon">
+                <span className="menu-toggle-bar" />
+                <span className="menu-toggle-bar" />
+                <span className="menu-toggle-bar" />
+              </div>
               <span className="menu-toggle-label">Menu</span>
             </button>
 

@@ -280,6 +280,12 @@ button:disabled:hover {
   cursor: pointer;
 }
 
+.menu-toggle-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
 .menu-toggle-bar {
   width: 18px;
   height: 2px;
@@ -344,6 +350,12 @@ button:disabled:hover {
 .site-main {
   width: min(900px, 92vw);
   padding-block: clamp(2rem, 6vw, 4rem);
+}
+
+@media (max-width: 480px) {
+  .site-main {
+    width: 95vw;
+  }
 }
 
 .page-frame {
@@ -583,6 +595,8 @@ button:disabled:hover {
 .home-page {
   display: grid;
   gap: 2rem;
+  grid-template-columns: minmax(0, 1fr);
+  width: 100%;
 }
 
 .kicker {
@@ -828,6 +842,18 @@ button:disabled:hover {
     box-shadow var(--transition-standard);
 }
 
+@media (max-width: 480px) {
+  .card {
+    padding: 0.75rem;
+  }
+
+  .content-section,
+  .hero-panel,
+  .positioning-section {
+    padding: 1rem;
+  }
+}
+
 .card h3 {
   margin: 0 0 0.75rem;
   color: var(--text);
@@ -1002,13 +1028,30 @@ button:disabled:hover {
   gap: 0.35rem;
 }
 
-.technology-diagram text {
-  font-size: 20px;
-}
+@media (max-width: 640px) {
+  .diagram {
+    overflow-x: auto;
+    padding-bottom: 1rem;
+  }
 
-@media (max-width: 760px) {
-  .technology-diagram text {
-    font-size: 14px;
+  .diagram svg {
+    min-width: 600px;
+    /* Ensure readability */
+    height: auto;
+  }
+
+  .technology-diagram text,
+  .outputs-diagram text,
+  .india-map-diagram text {
+    font-size: 16px;
+    /* Reset font size for scrolling */
+  }
+
+  /* Reduce list indentation to give text more space */
+  ul,
+  ol,
+  .home-list {
+    padding-left: 1.25rem;
   }
 }
 
@@ -1048,39 +1091,6 @@ button:disabled:hover {
 .esg-page .positioning-section,
 .esg-page .hero-panel {
   scroll-margin-top: 6rem;
-}
-
-.kpi-table-wrap {
-  overflow-x: auto;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  box-shadow: var(--shadow-sm);
-}
-
-.kpi-table {
-  width: 100%;
-  border-collapse: collapse;
-  min-width: 720px;
-}
-
-.kpi-table th,
-.kpi-table td {
-  border-bottom: 1px solid var(--line);
-  padding: 1rem;
-  text-align: left;
-}
-
-.kpi-table th {
-  color: var(--text);
-  background: var(--bg-elevated);
-  font-weight: 600;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.kpi-table td {
-  color: var(--text-dim);
 }
 
 .esg-diagram text {

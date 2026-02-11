@@ -309,11 +309,20 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
       </Section>
 
 
-      <PositioningSection
-        title="This is not a contact form."
-        description="It is the first step in deploying industrial-scale remediation and critical-minerals infrastructure. If you are prepared for a structured, technically grounded engagement, begin the process."
-        id="contact-close-title"
-      />
+      <Section
+        id="clarification-title"
+        kicker="CLARIFICATION"
+        title="Purpose of Enquiry"
+      >
+        <Card>
+          <p className="font-semibold mb-2">This is not a generic contact form.</p>
+          <p>
+            It is the first step in deploying industrial-scale remediation and critical-minerals
+            infrastructure. If you are prepared for a structured, technically grounded
+            engagement, begin the process.
+          </p>
+        </Card>
+      </Section>
     </div>
   );
 }
