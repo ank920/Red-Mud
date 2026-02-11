@@ -36,25 +36,35 @@ export default function TechnologyPage() {
         kicker="PROCESS OVERVIEW"
         title="Four Stages. One Integrated System. No Residual Waste."
       >
-        <figure className="card diagram technology-diagram" aria-label="Four-stage process overview">
-          <svg viewBox="0 0 1200 220" role="img" aria-label="Stage 1 to Stage 4 integrated process flow">
-            <rect x="20" y="50" width="260" height="120" rx="12" />
-            <rect x="320" y="50" width="260" height="120" rx="12" />
-            <rect x="620" y="50" width="260" height="120" rx="12" />
-            <rect x="920" y="50" width="260" height="120" rx="12" />
-            <text x="150" y="105" textAnchor="middle">Stage 1</text>
-            <text x="150" y="130" textAnchor="middle">Conditioning</text>
-            <text x="450" y="105" textAnchor="middle">Stage 2</text>
-            <text x="450" y="130" textAnchor="middle">Selective Leaching</text>
-            <text x="750" y="105" textAnchor="middle">Stage 3</text>
-            <text x="750" y="130" textAnchor="middle">Fractionated Recovery</text>
-            <text x="1050" y="105" textAnchor="middle">Stage 4</text>
-            <text x="1050" y="130" textAnchor="middle">Zero-Waste Finishing</text>
-            <path d="M280 110H320" />
-            <path d="M580 110H620" />
-            <path d="M880 110H920" />
-          </svg>
-        </figure>
+        <div className="deployment-flow technology-diagram mt-6">
+          <div className="flow-step start">
+            <div className="flow-content">
+              <span className="step-label">Stage 1</span>
+              <span className="step-detail">Conditioning</span>
+            </div>
+          </div>
+          <div className="flow-arrow"></div>
+          <div className="flow-step">
+            <div className="flow-content">
+              <span className="step-label">Stage 2</span>
+              <span className="step-detail">Selective Leaching</span>
+            </div>
+          </div>
+          <div className="flow-arrow"></div>
+          <div className="flow-step">
+            <div className="flow-content">
+              <span className="step-label">Stage 3</span>
+              <span className="step-detail">Fractionated Recovery</span>
+            </div>
+          </div>
+          <div className="flow-arrow"></div>
+          <div className="flow-step end">
+            <div className="flow-content">
+              <span className="step-label">Stage 4</span>
+              <span className="step-detail">Zero-Waste Finishing</span>
+            </div>
+          </div>
+        </div>
       </Section>
 
       <Section

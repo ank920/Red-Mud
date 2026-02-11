@@ -281,21 +281,21 @@ export default function HomePage() {
             <List items={deployment.commercial} />
           </Card>
         </div>
-        <figure className="card diagram mt-6" aria-label="Deployment model diagram">
-          <svg viewBox="0 0 920 220" role="img" aria-label="Flow of modular deployment options">
-            <rect x="20" y="60" width="220" height="100" rx="10" />
-            <rect x="350" y="20" width="220" height="80" rx="10" />
-            <rect x="350" y="120" width="220" height="80" rx="10" />
-            <rect x="680" y="60" width="220" height="100" rx="10" />
-            <text x="130" y="115" textAnchor="middle">Feedstock</text>
-            <text x="460" y="70" textAnchor="middle">350,000 t/year Units</text>
-            <text x="460" y="170" textAnchor="middle">1M t/year+ Scale</text>
-            <text x="790" y="115" textAnchor="middle">Commercial Structures</text>
-            <path d="M240 110H350" />
-            <path d="M570 60H680" />
-            <path d="M570 160H680" />
-          </svg>
-        </figure>
+        <div className="deployment-flow mt-6">
+          <div className="flow-step start">
+            <span className="step-label">Feedstock</span>
+          </div>
+          <div className="flow-arrow"></div>
+          <div className="flow-group">
+            <div className="flow-step">350,000 t/year Units</div>
+            <div className="flow-conn"></div>
+            <div className="flow-step">1M t/year+ Scale</div>
+          </div>
+          <div className="flow-arrow"></div>
+          <div className="flow-step end">
+            <span className="step-label">Commercial Structures</span>
+          </div>
+        </div>
       </Section>
 
 

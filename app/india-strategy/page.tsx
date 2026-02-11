@@ -76,22 +76,22 @@ export default function IndiaStrategyPage() {
           <p>India’s red-mud challenge is not future-tense.</p>
           <p>It is already accumulated, geographically concentrated, and policy-relevant today.</p>
         </Card>
-        <figure className="card diagram india-map-diagram mt-6" aria-label="India priority states and cluster map">
-          <svg viewBox="0 0 920 320" role="img" aria-label="India strategy cluster focus on Odisha, Jharkhand, and Uttar Pradesh">
-            <rect x="20" y="20" width="360" height="280" rx="12" />
-            <text x="200" y="60" textAnchor="middle">Priority States</text>
-            <text x="200" y="110" textAnchor="middle">Odisha</text>
-            <text x="200" y="145" textAnchor="middle">Jharkhand</text>
-            <text x="200" y="180" textAnchor="middle">Uttar Pradesh</text>
-            <rect x="420" y="20" width="480" height="280" rx="12" />
-            <text x="660" y="60" textAnchor="middle">Major Clusters</text>
-            <text x="660" y="105" textAnchor="middle">NALCO Damanjodi</text>
-            <text x="660" y="135" textAnchor="middle">Vedanta Lanjigarh</text>
-            <text x="660" y="165" textAnchor="middle">Hindalco Utkal</text>
-            <text x="660" y="195" textAnchor="middle">Hindalco Muri</text>
-            <text x="660" y="225" textAnchor="middle">Hindalco Renukoot</text>
-          </svg>
-        </figure>
+        <div className="grid-2 mt-6">
+          <Card title="Priority States">
+            <List items={["Odisha", "Jharkhand", "Uttar Pradesh"]} />
+          </Card>
+          <Card title="Major Clusters">
+            <List
+              items={[
+                "NALCO Damanjodi",
+                "Vedanta Lanjigarh",
+                "Hindalco Utkal",
+                "Hindalco Muri",
+                "Hindalco Renukoot"
+              ]}
+            />
+          </Card>
+        </div>
       </Section>
 
       <Section

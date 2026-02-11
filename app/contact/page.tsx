@@ -162,40 +162,26 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
 
           <div className="form-grid">
             <label>
-              Project or site description
-              <textarea name="projectDescription" required minLength={20} />
+              Full Name
+              <input name="fullName" type="text" required minLength={2} placeholder="e.g. Jane Doe" />
             </label>
             <label>
-              Intended timeline
-              <input name="intendedTimeline" type="text" required minLength={3} />
+              Contact Email
+              <input name="contactEmail" type="email" required placeholder="name@company.com" />
             </label>
-            <label>
-              Primary motivation (remediation / minerals / policy / investment)
-              <input name="primaryMotivation" type="text" required minLength={3} />
+            <label className="col-span-2">
+              Organization Name
+              <input name="organizationName" type="text" required minLength={2} placeholder="Your Company or Institution" />
             </label>
-            <label>
-              Confidentiality requirements
-              <textarea name="confidentialityRequirements" required minLength={10} />
-            </label>
-            <label>
-              Available chemical or mineralogical data
-              <textarea name="chemicalData" />
-            </label>
-            <label>
-              Prior studies or internal assessments
-              <textarea name="priorStudies" />
-            </label>
-            <label>
-              Regulatory constraints or milestones
-              <textarea name="regulatoryConstraints" />
-            </label>
-            <label>
-              Contact email
-              <input name="contactEmail" type="email" required />
-            </label>
-            <label>
-              Organization name
-              <input name="organizationName" type="text" required minLength={2} />
+            <label className="col-span-2">
+              Project Details & Strategic Context
+              <textarea
+                name="projectDetails"
+                required
+                minLength={20}
+                placeholder="Briefly describe your project, site location, or investment focus..."
+                rows={6}
+              />
             </label>
           </div>
 

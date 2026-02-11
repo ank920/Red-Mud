@@ -256,25 +256,35 @@ export default function PartnershipsPage() {
             />
           </Card>
         </div>
-        <figure className="card diagram partner-flow-diagram mt-6" aria-label="Partnership deployment flow diagram">
-          <svg viewBox="0 0 1220 260" role="img" aria-label="Four-step deployment flow from assessment to expansion">
-            <rect x="20" y="60" width="270" height="130" rx="12" />
-            <rect x="320" y="60" width="270" height="130" rx="12" />
-            <rect x="620" y="60" width="270" height="130" rx="12" />
-            <rect x="920" y="60" width="270" height="130" rx="12" />
-            <text x="155" y="110" textAnchor="middle">Step 1</text>
-            <text x="155" y="140" textAnchor="middle">Site & Stockpile Assessment</text>
-            <text x="455" y="110" textAnchor="middle">Step 2</text>
-            <text x="455" y="140" textAnchor="middle">Commercial Structuring</text>
-            <text x="755" y="110" textAnchor="middle">Step 3</text>
-            <text x="755" y="140" textAnchor="middle">Modular Plant Deployment</text>
-            <text x="1055" y="110" textAnchor="middle">Step 4</text>
-            <text x="1055" y="140" textAnchor="middle">Long-Term Operations</text>
-            <path d="M290 125H320" />
-            <path d="M590 125H620" />
-            <path d="M890 125H920" />
-          </svg>
-        </figure>
+        <div className="deployment-flow partner-flow-diagram mt-6">
+          <div className="flow-step start">
+            <div className="flow-content">
+              <span className="step-label">Step 1</span>
+              <span className="step-detail">Site & Stockpile Assessment</span>
+            </div>
+          </div>
+          <div className="flow-arrow"></div>
+          <div className="flow-step">
+            <div className="flow-content">
+              <span className="step-label">Step 2</span>
+              <span className="step-detail">Commercial Structuring</span>
+            </div>
+          </div>
+          <div className="flow-arrow"></div>
+          <div className="flow-step">
+            <div className="flow-content">
+              <span className="step-label">Step 3</span>
+              <span className="step-detail">Modular Plant Deployment</span>
+            </div>
+          </div>
+          <div className="flow-arrow"></div>
+          <div className="flow-step end">
+            <div className="flow-content">
+              <span className="step-label">Step 4</span>
+              <span className="step-detail">Long-Term Operations</span>
+            </div>
+          </div>
+        </div>
         <figure className="image-card image-card-large mt-6">
           <img
             src="/partnership/Deployment Flow.jpeg"

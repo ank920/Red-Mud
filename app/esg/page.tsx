@@ -309,21 +309,28 @@ export default function EsgPage() {
             </table>
           </div>
         </Card>
-        <figure className="card diagram esg-diagram mt-6" aria-label="ESG conversion flow diagram">
-          <svg viewBox="0 0 1000 240" role="img" aria-label="Waste-to-value ESG material flow">
-            <rect x="20" y="50" width="260" height="130" rx="12" />
-            <rect x="370" y="50" width="260" height="130" rx="12" />
-            <rect x="720" y="50" width="260" height="130" rx="12" />
-            <text x="150" y="105" textAnchor="middle">Stored Red Mud</text>
-            <text x="150" y="135" textAnchor="middle">Long-term Liability</text>
-            <text x="500" y="105" textAnchor="middle">Integrated Recovery</text>
-            <text x="500" y="135" textAnchor="middle">+ Closed-loop Water</text>
-            <text x="850" y="105" textAnchor="middle">Material Outputs</text>
-            <text x="850" y="135" textAnchor="middle">+ ESG KPIs</text>
-            <path d="M280 115H370" />
-            <path d="M630 115H720" />
-          </svg>
-        </figure>
+        <div className="deployment-flow esg-diagram mt-6">
+          <div className="flow-step start">
+            <div className="flow-content">
+              <span className="step-label">Stored Red Mud</span>
+              <span className="step-detail">Long-term Liability</span>
+            </div>
+          </div>
+          <div className="flow-arrow"></div>
+          <div className="flow-step">
+            <div className="flow-content">
+              <span className="step-label">Integrated Recovery</span>
+              <span className="step-detail">+ Closed-loop Water</span>
+            </div>
+          </div>
+          <div className="flow-arrow"></div>
+          <div className="flow-step end">
+            <div className="flow-content">
+              <span className="step-label">Material Outputs</span>
+              <span className="step-detail">+ ESG KPIs</span>
+            </div>
+          </div>
+        </div>
       </Section>
 
 
