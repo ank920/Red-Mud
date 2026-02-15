@@ -4,6 +4,7 @@ import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 import { List } from "@/components/ui/List";
 import { PositioningSection } from "@/components/ui/PositioningSection";
+import { ContactForm } from "@/components/ui/ContactForm";
 import { ClipboardList, Building2, Landmark, Briefcase, FileInput, ArrowRightCircle, AlertCircle, Scale, MessageSquare } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -142,57 +143,7 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
         kicker="STEP 2 — PROJECT CONTEXT & ENGAGEMENT REQUEST"
         title="This step helps determine technical readiness and next actions."
       >
-        <form className="card intake-form" method="post" action="/api/intake">
-          <fieldset>
-            <legend>Organization category (required)</legend>
-            <div className="radio-grid">
-              <label>
-                <input type="radio" name="organizationType" value="Alumina Producers & Refinery Operators" required />
-                Alumina Producers & Refinery Operators
-              </label>
-              <label>
-                <input type="radio" name="organizationType" value="Government & Public-Sector Institutions" required />
-                Government & Public-Sector Institutions
-              </label>
-              <label>
-                <input type="radio" name="organizationType" value="Strategic & Institutional Investors" required />
-                Strategic & Institutional Investors
-              </label>
-            </div>
-          </fieldset>
-
-          <div className="form-grid">
-            <label>
-              Full Name
-              <input name="fullName" type="text" required minLength={2} placeholder="e.g. Jane Doe" />
-            </label>
-            <label>
-              Contact Email
-              <input name="contactEmail" type="email" required placeholder="name@company.com" />
-            </label>
-            <label className="col-span-2">
-              Organization Name
-              <input name="organizationName" type="text" required minLength={2} placeholder="Your Company or Institution" />
-            </label>
-            <label className="col-span-2">
-              Project Details & Strategic Context
-              <textarea
-                name="projectDetails"
-                required
-                minLength={20}
-                placeholder="Briefly describe your project, site location, or investment focus..."
-                rows={6}
-              />
-            </label>
-          </div>
-
-          <p className="form-note">
-            Note:
-            Submission of this form does not constitute a commercial offer, investment solicitation,
-            or technology license.
-          </p>
-          <button type="submit">Submit project intake</button>
-        </form>
+        <ContactForm />
         <figure className="image-card image-card-large mt-6">
           <img
             src="/CONTACT/CONTACT3.webp"

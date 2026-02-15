@@ -30,20 +30,20 @@ export const ScrollReveal = ({
 
     const variants: Record<string, { hidden: Variant; visible: Variant }> = {
         fade: {
-            hidden: { opacity: 0 },
-            visible: { opacity: 1, transition: { duration: 0.6, delay } }
+            hidden: {},
+            visible: { transition: { duration: 0.6, delay } }
         },
         slideUp: {
-            hidden: { opacity: 0, y: 40 },
-            visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut", delay } }
+            hidden: { y: 20 },
+            visible: { y: 0, transition: { duration: 0.6, ease: "easeOut", delay } }
         },
         slideLeft: {
-            hidden: { opacity: 0, x: -40 },
-            visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut", delay } }
+            hidden: { x: -20 },
+            visible: { x: 0, transition: { duration: 0.6, ease: "easeOut", delay } }
         },
         scale: {
-            hidden: { opacity: 0, scale: 0.8 },
-            visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: "easeOut", delay } }
+            hidden: { scale: 0.95 },
+            visible: { scale: 1, transition: { duration: 0.5, ease: "easeOut", delay } }
         }
     };
 

@@ -4,7 +4,7 @@ import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 import { List } from "@/components/ui/List";
 import { PositioningSection } from "@/components/ui/PositioningSection";
-import { Handshake, FileBadge, Factory, TrendingUp, ShieldCheck, Users, ArrowRightCircle, ClipboardCheck, FileText, Settings, Activity, Lightbulb } from "lucide-react";
+import { Handshake, FileBadge, Factory, TrendingUp, ShieldCheck, Users, ArrowRightCircle, ClipboardCheck, FileText, Settings, Activity, Lightbulb, Building2 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Partnerships"
@@ -301,7 +301,7 @@ export default function PartnershipsPage() {
         title="For Alumina Producers"
       >
         <div className="grid-2">
-          <Card title="For Alumina Producers" icon={Factory}>
+          <Card title="For Alumina Producers" icon={Building2}>
             <List
               items={[
                 "Permanent reduction of red mud liabilities",

@@ -4,7 +4,7 @@ import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 import { List } from "@/components/ui/List";
 import { PositioningSection } from "@/components/ui/PositioningSection";
-import { Globe, LandPlot, Droplet, Wind, Recycle, Users, BarChart3, Sprout } from "lucide-react";
+import { Leaf, Droplet, CloudOff, Recycle, Users, BarChart3, Target, ShieldCheck, TrendingUp, MapPin, Building2, Scale } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "ESG"
@@ -38,7 +38,7 @@ export default function EsgPage() {
         kicker="WASTE-TO-VALUE"
         title="The Core ESG Principle"
       >
-        <Card icon={Globe}>
+        <Card icon={Leaf}>
           <p>
             Globally, more than 4 billion tonnes of red mud sit in engineered ponds, with
             ~150 million tonnes added annually. Each tonne represents:
@@ -69,7 +69,7 @@ export default function EsgPage() {
         kicker="ENVIRONMENTAL IMPACT PILLARS"
         title="1. LAND RECLAMATION & RISK ELIMINATION"
       >
-        <Card title="Impact Mechanism" icon={LandPlot}>
+        <Card title="Impact Mechanism" icon={MapPin}>
           <List
             items={[
               "Each tonne processed permanently reduces stored residue volume",
@@ -137,7 +137,7 @@ export default function EsgPage() {
           />
         </figure>
 
-        <Card title="3. CARBON & ENERGY FOOTPRINT AVOIDANCE" className="mt-6" icon={Wind}>
+        <Card title="3. CARBON & ENERGY FOOTPRINT AVOIDANCE" className="mt-6" icon={CloudOff}>
           <p className="font-semibold mb-2">Process Advantage</p>
           <List
             items={[

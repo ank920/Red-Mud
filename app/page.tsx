@@ -116,6 +116,16 @@ export default function HomePage() {
         </div>
       </Hero>
 
+      {/* Primary CTAs */}
+      <div className="positioning-buttons" style={{ marginTop: '2rem' }}>
+        <a href="/technology" className="btn btn-primary">
+          Explore Technology
+        </a>
+        <a href="/contact" className="btn btn-primary">
+          Discuss Partnership Opportunities
+        </a>
+      </div>
+
       <Section
         id="problem-title"
         kicker="THE PROBLEM"
@@ -307,7 +317,7 @@ export default function HomePage() {
         buttons={[
           { label: "Explore Technology", href: "/technology" },
           { label: "View Outputs", href: "/outputs" },
-          { label: "India Strategy", href: "/india-strategy" }
+          { label: "Discuss Partnership Opportunities", href: "/contact" }
         ]}
       />
     </div>

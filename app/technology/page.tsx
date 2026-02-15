@@ -73,6 +73,7 @@ export default function TechnologyPage() {
         kicker="STAGE 1 — FEEDSTOCK CONDITIONING & MATRIX STABILIZATION"
         title="Objective:"
       >
+        <div className="stage-badge" style={{ display: 'inline-block', background: 'var(--accent)', color: 'white', padding: '0.5rem 1rem', borderRadius: '8px', fontWeight: '700', marginBottom: '1rem' }}>01</div>
         <p>Prepare highly alkaline, mineral-complex red mud for controlled, selective extraction.</p>
         <Card title="What Happens" icon={Settings}>
           <List
@@ -111,7 +112,7 @@ export default function TechnologyPage() {
         <figure className="image-card image-card-tall mt-6">
           <img
             src="/TECHNOLOGY/FEEDSTOCK CONDITIONING & MATRIX STABILIZATION.png"
-            alt="Stage 1 - Feedstock Conditioning Process"
+            alt="Stage 1 Feedstock Conditioning: Mechanical homogenization and surface activation of red mud to prepare for selective extraction"
             loading="lazy"
           />
         </figure>
@@ -122,6 +123,7 @@ export default function TechnologyPage() {
         kicker="STAGE 2 — SELECTIVE DISSOLUTION & TARGETED LEACHING"
         title="Objective:"
       >
+        <div className="stage-badge" style={{ display: 'inline-block', background: 'var(--accent)', color: 'white', padding: '0.5rem 1rem', borderRadius: '8px', fontWeight: '700', marginBottom: '1rem' }}>02</div>
         <p>Mobilize critical and strategic elements without dissolving the full bulk matrix.</p>
         <div className="grid-2">
           <Card title="What Happens" icon={Filter}>
@@ -165,7 +167,7 @@ export default function TechnologyPage() {
         <figure className="image-card image-card-large mt-6">
           <img
             src="/TECHNOLOGY/108233019-1764243888072-gettyimages-2235868370-ESTONIA-NARVA-RARE-EARTH-PLANT-OPEN.jpeg"
-            alt="Stage 2 - Rare Earth Processing Facility"
+            alt="Stage 2 Selective Leaching: Proprietary chemistry mobilizes rare earths, scandium, titanium and iron while leaving silicates inert"
             loading="lazy"
           />
         </figure>
@@ -176,6 +178,7 @@ export default function TechnologyPage() {
         kicker="STAGE 3 — FRACTIONATED SEPARATION & METAL RECOVERY"
         title="Objective:"
       >
+        <div className="stage-badge" style={{ display: 'inline-block', background: 'var(--accent)', color: 'white', padding: '0.5rem 1rem', borderRadius: '8px', fontWeight: '700', marginBottom: '1rem' }}>03</div>
         <p>
           Individually recover high-purity mineral streams suitable for downstream refining or
           direct industrial use.
@@ -210,7 +213,7 @@ export default function TechnologyPage() {
         <figure className="image-card image-card-full mt-6">
           <img
             src="/TECHNOLOGY/Fractionated Separation & Metal Recovery.jpg"
-            alt="Strategic Materials Recovered from Red Mud"
+            alt="Stage 3 Metal Recovery: Fractionated separation produces distinct product streams for scandium, REEs, iron oxides and titanium compounds"
             loading="lazy"
           />
         </figure>
@@ -221,6 +224,7 @@ export default function TechnologyPage() {
         kicker="STAGE 4 — RESIDUAL MATRIX CONVERSION & ZERO-WASTE FINISHING"
         title="Objective:"
       >
+        <div className="stage-badge" style={{ display: 'inline-block', background: 'var(--accent)', color: 'white', padding: '0.5rem 1rem', borderRadius: '8px', fontWeight: '700', marginBottom: '1rem' }}>04</div>
         <p>Eliminate tailings and convert all remaining solids into stable, usable materials.</p>
         <Card title="What Happens" icon={Recycle}>
           <List
@@ -245,7 +249,7 @@ export default function TechnologyPage() {
         <figure className="image-card image-card-tall mt-6">
           <img
             src="/TECHNOLOGY/WATER RECOVERY & CLOSED-LOOP OPERATION.png"
-            alt="Water Recovery and Closed-Loop Operation"
+            alt="Stage 4 Zero-Waste Finishing: Remaining solids converted to stable construction materials with full water and reagent recovery"
             loading="lazy"
           />
         </figure>

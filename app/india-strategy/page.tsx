@@ -4,6 +4,7 @@ import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 import { List } from "@/components/ui/List";
 import { PositioningSection } from "@/components/ui/PositioningSection";
+import { StatCard } from "@/components/ui/StatCard";
 import { AlertTriangle, Map, Layers, Lightbulb, Target, Gem, ScrollText, ShieldCheck, TrendingUp, Leaf, Settings, Landmark, Scale, Factory } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -47,6 +48,22 @@ export default function IndiaStrategyPage() {
             ]}
           />
         </Card>
+
+        {/* Key Statistics */}
+        <div className="grid-2 mt-6">
+          <StatCard
+            value="9M t/year"
+            label="Annual Red Mud Generation"
+            description="India's total red mud production"
+            icon={Factory}
+          />
+          <StatCard
+            value="<3%"
+            label="Current Utilization Rate"
+            description="Far below 25% regulatory target"
+            icon={TrendingUp}
+          />
+        </div>
         <div className="grid-2 mt-6">
           <Card title="Geographic Concentration" icon={Map}>
             <ul className="home-list">

@@ -4,6 +4,7 @@ import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 import { List } from "@/components/ui/List";
 import { PositioningSection } from "@/components/ui/PositioningSection";
+import { Droplet, Zap, Sparkles, Gem } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Outputs"
@@ -41,7 +42,7 @@ export default function OutputsPage() {
         title="Industrial-Grade Products with Immediate Offtake Potential"
       >
         <div className="grid-2">
-          <Card title="Recovered Form">
+          <Card title="Recovered Form" icon={Droplet}>
             <List
               items={[
                 "Iron oxide pigments",
@@ -91,7 +92,7 @@ export default function OutputsPage() {
         title="Structural and Functional Materials for Energy & Mobility"
       >
         <div className="grid-2">
-          <Card title="Recovered Form">
+          <Card title="Recovered Form" icon={Zap}>
             <List
               items={[
                 "Titanium-rich intermediates",
@@ -142,7 +143,7 @@ export default function OutputsPage() {
         title="Magnet, Electronics, and Clean-Energy Criticals"
       >
         <div className="grid-2">
-          <Card title="Recovered REE Spectrum">
+          <Card title="Recovered REE Spectrum" icon={Sparkles}>
             <List
               items={[
                 "Yttrium (Y)",
@@ -205,7 +206,7 @@ export default function OutputsPage() {
         title="Ultra-High-Value Enabler for Aerospace and Advanced Energy Systems"
       >
         <div className="grid-2">
-          <Card title="Recovered Form">
+          <Card title="Recovered Form" icon={Gem}>
             <List
               items={[
                 "Scandium oxide (Sc₂O₃) intermediate",
