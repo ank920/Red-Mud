@@ -83,8 +83,7 @@ export function ContactForm() {
                             type="radio"
                             name="organizationType"
                             value="Alumina Producers & Refinery Operators"
-                            aria-required="true"
-                            aria-invalid={errors.organizationType ? "true" : "false"}
+                            required
                         />
                         Alumina Producers & Refinery Operators
                     </label>
@@ -93,8 +92,7 @@ export function ContactForm() {
                             type="radio"
                             name="organizationType"
                             value="Government & Public-Sector Institutions"
-                            aria-required="true"
-                            aria-invalid={errors.organizationType ? "true" : "false"}
+                            required
                         />
                         Government & Public-Sector Institutions
                     </label>
@@ -103,8 +101,7 @@ export function ContactForm() {
                             type="radio"
                             name="organizationType"
                             value="Strategic & Institutional Investors"
-                            aria-required="true"
-                            aria-invalid={errors.organizationType ? "true" : "false"}
+                            required
                         />
                         Strategic & Institutional Investors
                     </label>

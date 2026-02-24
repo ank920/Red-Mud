@@ -38,6 +38,7 @@ export function Hero({
                 </figure>
             ) : imageSrc && (
                 <figure className="hero-media">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={imageSrc} alt={imageAlt || ""} loading="eager" />
                 </figure>
             )}

@@ -44,7 +44,6 @@ export function VantaHero({
     id = "hero-title",
 }: VantaHeroProps) {
     const vantaRef = useRef<HTMLDivElement>(null);
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const vantaEffect = useRef<any>(null);
 
     useEffect(() => {

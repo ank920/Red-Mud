@@ -113,13 +113,22 @@ button {
 
 .btn-primary,
 button[type="submit"] {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
-  color: #ffffff;
-  box-shadow:
-    0 4px 12px rgba(180, 83, 9, 0.25),
-    0 2px 4px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  color: #1c1917;
+  border-radius: 50px;
+  padding: 0.65rem 2.25rem;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  transition: color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* Background sliding fill wrapper */
 .btn-primary::before,
 button[type="submit"]::before {
   content: '';
@@ -128,36 +137,36 @@ button[type="submit"]::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, transparent 100%);
-  opacity: 0;
-  transition: opacity var(--transition-standard);
+  background: var(--accent);
+  border-radius: 50px;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-primary:hover,
 button[type="submit"]:hover {
+  color: #ffffff;
+  box-shadow: 0 6px 16px rgba(234, 88, 12, 0.25);
   transform: translateY(-2px);
-  box-shadow:
-    0 8px 20px rgba(180, 83, 9, 0.35),
-    0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .btn-primary:hover::before,
 button[type="submit"]:hover::before {
-  opacity: 1;
+  transform: scaleX(1);
 }
 
 .btn-primary:active,
 button[type="submit"]:active {
-  transform: translateY(0);
-  box-shadow:
-    0 2px 8px rgba(180, 83, 9, 0.3),
-    0 1px 3px rgba(0, 0, 0, 0.1);
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 3px 8px rgba(234, 88, 12, 0.2);
 }
 
 .btn-primary:focus-visible,
 button[type="submit"]:focus-visible {
-  outline: 3px solid var(--accent-soft);
-  outline-offset: 2px;
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
 }
 
 /* Secondary button style */
