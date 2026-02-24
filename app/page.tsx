@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Hero } from "@/components/ui/Hero";
+import { VantaHero } from "@/components/ui/VantaHero";
 import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 import { List } from "@/components/ui/List";
@@ -9,6 +9,7 @@ import { Globe, MapPin, AlertTriangle, Settings, FlaskConical, Target, Layers, C
 export const metadata: Metadata = {
   title: "Home"
 };
+
 
 const globalProblem = [
   "4+ billion tonnes of red mud accumulated worldwide",
@@ -91,11 +92,9 @@ const deployment = {
 export default function HomePage() {
   return (
     <div className="home-page">
-      <Hero
+      <VantaHero
         title="From Bauxite Residue to Critical Minerals"
         lead="A patented, commercially proven platform for extracting rare earths and strategic metals from red mud—at industrial scale, with no mining."
-        imageSrc="/home/From Bauxite Residue to Critical Minerals.jpg"
-        imageAlt="From Bauxite Residue to Critical Minerals"
       >
         <p>
           Red mud—bauxite residue from alumina refining—is one of the largest unmanaged
@@ -114,7 +113,8 @@ export default function HomePage() {
             ]}
           />
         </div>
-      </Hero>
+      </VantaHero>
+
 
       {/* Primary CTAs */}
       <div className="positioning-buttons" style={{ marginTop: '2rem' }}>
