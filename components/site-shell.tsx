@@ -13,6 +13,7 @@ const navigation = [
   { href: "/outputs", label: "Outputs" },
   { href: "/esg", label: "ESG" },
   { href: "/india-strategy", label: "India Strategy" },
+  { href: "/team", label: "Our Team" },
   { href: "/partnerships", label: "Partnerships" },
 ];
 
@@ -79,12 +80,12 @@ export function SiteShell({ children }: SiteShellProps) {
     <>
       <a className="skip-link" href="#content">Skip to content</a>
       <div className="site-shell">
-        <header className={`site-header${scrolled ? " scrolled" : ""}`} aria-label="Primary">
+        <header className={`site-header${scrolled ? " scrolled" : ""}${mobileNavOpen ? " menu-open" : ""}`} aria-label="Primary">
           <div className="container site-header-inner">
-            {/* Brand logotype: RED in orange, MUD in dark */}
-            <Link className="brand" href="/" aria-label="Red Mud home" onClick={() => setMobileNavOpen(false)}>
-              <span className="brand-red">Red</span>
-              <span className="brand-mud">&nbsp;Mud</span>
+            {/* Brand logotype: RARE in orange, EARTH in dark */}
+            <Link className="brand" href="/" aria-label="Rare Earth home" onClick={() => setMobileNavOpen(false)}>
+              <span className="brand-rare">Rare</span>
+              <span className="brand-earth">&nbsp;Earth</span>
             </Link>
 
             <button

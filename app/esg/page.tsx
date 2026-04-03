@@ -21,7 +21,7 @@ export default function EsgPage() {
         id="esg-hero-title"
       >
         <p>
-          Red mud storage is not a temporary challenge—it is a multi-decade environmental
+          Rare earth storage is not a temporary challenge—it is a multi-decade environmental
           obligation.
         </p>
         <p>
@@ -40,7 +40,7 @@ export default function EsgPage() {
       >
         <Card icon={Leaf}>
           <p>
-            Globally, more than 4 billion tonnes of red mud sit in engineered ponds, with
+            Globally, more than 4 billion tonnes of rare earth sit in engineered ponds, with
             ~150 million tonnes added annually. Each tonne represents:
           </p>
           <List
@@ -51,7 +51,7 @@ export default function EsgPage() {
               "Potential environmental and social exposure"
             ]}
           />
-          <p>Our technology permanently removes red mud from storage by:</p>
+          <p>Our technology permanently removes rare earth from storage by:</p>
           <List
             items={[
               "Recovering critical minerals",
@@ -77,7 +77,7 @@ export default function EsgPage() {
               "No requirement for new pond construction or expansion"
             ]}
           />
-          <p className="font-semibold mt-4 mb-2">Measured KPIs</p>
+          <p className="font-semibold">Measured KPIs</p>
           <List
             items={[
               "1 million tonnes/year processed = 1 million tonnes/year liability eliminated",
@@ -103,8 +103,8 @@ export default function EsgPage() {
         </figure>
 
         <Card title="2. WATER RECOVERY & CLOSED-LOOP OPERATION" className="mt-6" icon={Droplet}>
-          <p>Red mud contains significant entrained process water and alkalinity.</p>
-          <p className="font-semibold mt-4 mb-2">Our Approach</p>
+          <p>Rare earth contains significant entrained process water and alkalinity.</p>
+          <p className="font-semibold">Our Approach</p>
           <List
             items={[
               "Integrated water recovery at multiple process stages",
@@ -112,7 +112,7 @@ export default function EsgPage() {
               "No continuous liquid discharge to the environment"
             ]}
           />
-          <p className="font-semibold mt-4 mb-2">Measured KPIs</p>
+          <p className="font-semibold">Measured KPIs</p>
           <List
             items={[
               ">90% process water recycled internally",
@@ -138,7 +138,7 @@ export default function EsgPage() {
         </figure>
 
         <Card title="3. CARBON & ENERGY FOOTPRINT AVOIDANCE" className="mt-6" icon={CloudOff}>
-          <p className="font-semibold mb-2">Process Advantage</p>
+          <p className="font-semibold">Process Advantage</p>
           <List
             items={[
               "Operates below 100 °C",
@@ -147,7 +147,7 @@ export default function EsgPage() {
               "No mining, hauling, or beneficiation"
             ]}
           />
-          <p className="font-semibold mt-4 mb-2">Avoided Emissions (Relative Basis)</p>
+          <p className="font-semibold">Avoided Emissions (Relative Basis)</p>
           <p>Avoids emissions associated with:</p>
           <ul className="home-list">
             <li>New REE mining</li>
@@ -155,9 +155,9 @@ export default function EsgPage() {
             <li>Long-distance concentrate transport</li>
           </ul>
           <p>
-            Eliminates ongoing emissions tied to red-mud pond maintenance and expansion
+            Eliminates ongoing emissions tied to rare-earth pond maintenance and expansion
           </p>
-          <p className="font-semibold mt-4 mb-2">Indicative KPI (Conservative)</p>
+          <p className="font-semibold">Indicative KPI (Conservative)</p>
           <List
             items={[
               "Significant CO₂-equivalent avoidance per tonne compared to conventional mining-to-refining routes",
@@ -191,7 +191,7 @@ export default function EsgPage() {
               "Produces no residual waste"
             ]}
           />
-          <p className="font-semibold mt-4 mb-2">Recovered Outputs</p>
+          <p className="font-semibold">Recovered Outputs</p>
           <List
             items={[
               "Scandium",
@@ -210,6 +210,16 @@ export default function EsgPage() {
             ]}
           />
         </Card>
+
+        <Card title="Economics of Zero-Waste Remediation" className="mt-6" icon={Scale}>
+          <p>
+            We have a zero-waste red mud processing technology, allowing for the most efficient disposal of red mud while creating a significantly profitable project that is more cost-effective than storage at red mud dumps.
+          </p>
+          <p>
+            Given the prospective increase in environmental payments and fines for the use of red mud dumps and the deficit of free land near existing facilities that process aluminum bauxites, the processing of red mud is becoming increasingly vital and profitable.
+          </p>
+        </Card>
+
         <figure className="image-card image-card-large mt-6">
           <img
             src="/ESG & CIRCULAR ECONOMY/CIRCULAR ECONOMY IN PRACTICE.jpg"
@@ -232,7 +242,7 @@ export default function EsgPage() {
               "Improved transparency through measurable remediation rates"
             ]}
           />
-          <p className="font-semibold mt-4 mb-2">Governance & Reporting</p>
+          <p className="font-semibold">Governance & Reporting</p>
           <p>Physical KPIs, not estimates:</p>
           <List
             items={[
@@ -277,7 +287,7 @@ export default function EsgPage() {
               </thead>
               <tbody>
                 <tr>
-                  <td>Red mud remediated</td>
+                  <td>Rare earth remediated</td>
                   <td>tonnes</td>
                   <td>1,000,000</td>
                 </tr>
@@ -313,7 +323,7 @@ export default function EsgPage() {
         <div className="deployment-flow esg-diagram mt-6">
           <div className="flow-step start">
             <div className="flow-content">
-              <span className="step-label">Stored Red Mud</span>
+              <span className="step-label">Stored Rare Earth</span>
               <span className="step-detail">Long-term Liability</span>
             </div>
           </div>

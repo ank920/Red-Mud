@@ -48,12 +48,12 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
         title="Institutional Intake Framework"
       >
         {submitted ? (
-          <Card className="intake-status success mb-6" title="Submission received">
+          <Card className="intake-status success" title="Submission received">
             <p>Your intake request has been recorded for structured review.</p>
           </Card>
         ) : null}
         {hasError ? (
-          <Card className="intake-status error mb-6" title="Submission incomplete">
+          <Card className="intake-status error" title="Submission incomplete">
             <p>Please complete all required fields and submit again.</p>
           </Card>
         ) : null}
@@ -66,29 +66,29 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
 
         <div className="grid-3 mt-6">
           <Card title="A. Alumina Producers & Refinery Operators" icon={Building2}>
-            <p className="font-semibold text-sm mb-2">Primary focus: remediation, compliance, and asset-adjacent deployment</p>
-            <p className="font-semibold text-sm mb-2">Typical objectives</p>
+            <p className="font-semibold text-sm">Primary focus: remediation, compliance, and asset-adjacent deployment</p>
+            <p className="font-semibold text-sm">Typical objectives</p>
             <List
               items={[
-                "Reduction of red-mud stockpiles",
+                "Reduction of rare-earth stockpiles",
                 "Long-term residue liability management",
                 "Evaluation of on-site or adjacent processing",
                 "ESG and regulatory alignment"
               ]}
             />
-            <p className="font-semibold text-sm mt-4 mb-2">Information requested</p>
+            <p className="font-semibold text-sm">Information requested</p>
             <List
               items={[
                 "Refinery location(s)",
-                "Approximate annual red-mud generation",
+                "Approximate annual rare-earth generation",
                 "Legacy stockpile estimate (if available)",
                 "Preferred engagement model (JV / Licensing / BOO)"
               ]}
             />
           </Card>
           <Card title="B. Government & Public-Sector Institutions" icon={Landmark}>
-            <p className="font-semibold text-sm mb-2">Primary focus: policy execution, remediation mandates, and national capability</p>
-            <p className="font-semibold text-sm mb-2">Typical objectives</p>
+            <p className="font-semibold text-sm">Primary focus: policy execution, remediation mandates, and national capability</p>
+            <p className="font-semibold text-sm">Typical objectives</p>
             <List
               items={[
                 "Critical-minerals security",
@@ -97,7 +97,7 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
                 "Regional or national deployment frameworks"
               ]}
             />
-            <p className="font-semibold text-sm mt-4 mb-2">Information requested</p>
+            <p className="font-semibold text-sm">Information requested</p>
             <List
               items={[
                 "Jurisdiction / ministry / agency",
@@ -108,8 +108,8 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
             />
           </Card>
           <Card title="C. Strategic & Institutional Investors" icon={Briefcase}>
-            <p className="font-semibold text-sm mb-2">Primary focus: infrastructure, critical materials, and long-duration assets</p>
-            <p className="font-semibold text-sm mb-2">Typical objectives</p>
+            <p className="font-semibold text-sm">Primary focus: infrastructure, critical materials, and long-duration assets</p>
+            <p className="font-semibold text-sm">Typical objectives</p>
             <List
               items={[
                 "Equity or project-level investment",
@@ -118,7 +118,7 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
                 "Strategic mineral supply participation"
               ]}
             />
-            <p className="font-semibold text-sm mt-4 mb-2">Information requested</p>
+            <p className="font-semibold text-sm">Information requested</p>
             <List
               items={[
                 "Investor type (PE, infra fund, sovereign, family office, strategic)",
@@ -253,7 +253,7 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
         title="Purpose of Enquiry"
       >
         <Card icon={MessageSquare}>
-          <p className="font-semibold mb-2">This is not a generic contact form.</p>
+          <p className="font-semibold">This is not a generic contact form.</p>
           <p>
             It is the first step in deploying industrial-scale remediation and critical-minerals
             infrastructure. If you are prepared for a structured, technically grounded

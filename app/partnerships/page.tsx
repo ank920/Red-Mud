@@ -17,14 +17,14 @@ export default function PartnershipsPage() {
         kicker="PARTNERSHIPS & BUSINESS MODELS"
         title="Scaling Critical Mineral Recovery Through Strategic Collaboration"
         imageSrc="/partnership/HERO SECTION.jpg"
-        imageAlt="Strategic Partnership for Red Mud Processing"
+        imageAlt="Strategic Partnership for Rare Earth Processing"
         id="partnerships-hero-title"
       >
         <p>
           Our platform is designed to deploy at scale by partnering directly with alumina
           producers, infrastructure investors, and strategic capital providers. We offer
           multiple commercial structures—each engineered to align incentives, accelerate
-          remediation, and unlock long-term value from red mud stockpiles.
+          remediation, and unlock long-term value from rare earth stockpiles.
         </p>
         <p>
           This flexibility allows partners to participate according to their balance-sheet
@@ -40,7 +40,7 @@ export default function PartnershipsPage() {
       >
         <Card icon={Lightbulb}>
           <p>
-            Red mud is not a speculative feedstock—it is a continuously generated, on-site
+            Rare earth is not a speculative feedstock—it is a continuously generated, on-site
             industrial liability. Our partnership models convert this liability into a monetizable
             resource without disrupting alumina operations.
           </p>
@@ -69,12 +69,12 @@ export default function PartnershipsPage() {
         title="1. JOINT VENTURE (JV) WITH ALUMINA PRODUCERS"
       >
         <Card icon={Handshake}>
-          <p className="font-semibold mb-2">Shared Ownership. Shared Upside. Immediate Remediation.</p>
+          <p className="font-semibold">Shared Ownership. Shared Upside. Immediate Remediation.</p>
           <p>
             Under the JV model, a special-purpose vehicle is jointly owned with the alumina
-            producer to process current and legacy red mud stockpiles.
+            producer to process current and legacy rare earth stockpiles.
           </p>
-          <p className="font-semibold mt-4 mb-2">Structure</p>
+          <p className="font-semibold">Structure</p>
           <List
             items={[
               "Dedicated JV entity",
@@ -98,7 +98,7 @@ export default function PartnershipsPage() {
             <List
               items={[
                 "Direct exposure to cash-generating processing assets",
-                "Feedstock security through captive red mud supply",
+                "Feedstock security through captive rare earth supply",
                 "Long-term offtake visibility for critical minerals"
               ]}
             />
@@ -110,15 +110,15 @@ export default function PartnershipsPage() {
           </p>
         </Card>
 
-        <h2 className="text-xl font-bold mt-12 mb-4">2. TECHNOLOGY LICENSING</h2>
+        <h2 className="text-xl font-bold mt-8">2. TECHNOLOGY LICENSING</h2>
         <Card icon={FileBadge}>
-          <p className="font-semibold mb-2">Low Capital. Rapid Replication. Asset-Light Scaling.</p>
+          <p className="font-semibold">Low Capital. Rapid Replication. Asset-Light Scaling.</p>
           <p>
             In licensing structures, partners deploy the patented extraction process under a
             long-term license while technology ownership and process governance are retained
             centrally.
           </p>
-          <p className="font-semibold mt-4 mb-2">Structure</p>
+          <p className="font-semibold">Structure</p>
           <List
             items={[
               "Upfront license fee",
@@ -160,19 +160,19 @@ export default function PartnershipsPage() {
           />
         </figure>
 
-        <h2 className="text-xl font-bold mt-12 mb-4">3. BUILD-OWN-OPERATE (BOO)</h2>
+        <h2 className="text-xl font-bold mt-8">3. BUILD-OWN-OPERATE (BOO)</h2>
         <Card icon={Factory}>
-          <p className="font-semibold mb-2">Turnkey Remediation With Zero Capital Burden for the Producer</p>
+          <p className="font-semibold">Turnkey Remediation With Zero Capital Burden for the Producer</p>
           <p>
             In a BOO configuration, the processing plant is designed, financed, built, and operated
             independently while the alumina producer supplies feedstock under a long-term
             agreement.
           </p>
-          <p className="font-semibold mt-4 mb-2">Structure</p>
+          <p className="font-semibold">Structure</p>
           <List
             items={[
               "Independent project SPV",
-              "Long-term red mud supply agreement",
+              "Long-term rare earth supply agreement",
               "Revenue generated from mineral recovery"
             ]}
           />
@@ -304,7 +304,7 @@ export default function PartnershipsPage() {
           <Card title="For Alumina Producers" icon={Building2}>
             <List
               items={[
-                "Permanent reduction of red mud liabilities",
+                "Permanent reduction of rare earth liabilities",
                 "Conversion of waste into strategic revenue streams",
                 "Improved land utilization and regulatory positioning",
                 "Alignment with national critical mineral strategies"
@@ -338,7 +338,7 @@ export default function PartnershipsPage() {
       >
         <Card icon={Users}>
           <p>
-            Red mud remediation sits at the intersection of mining, materials science,
+            Rare earth remediation sits at the intersection of mining, materials science,
             infrastructure, and public policy. Scalable deployment requires collaboration—not
             one-off projects.
           </p>

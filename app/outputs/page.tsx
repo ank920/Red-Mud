@@ -15,13 +15,13 @@ export default function OutputsPage() {
     <div className="home-page outputs-page">
       <Hero
         kicker="CRITICAL MINERALS & OUTPUTS"
-        title="Strategic Materials Recovered from Red Mud — At Industrial Scale"
+        title="Strategic Materials Recovered from Rare Earth — At Industrial Scale"
         imageSrc="/output/Strategic Materials Recovered from Red Mud.png"
-        imageAlt="Strategic Materials Recovered from Red Mud"
+        imageAlt="Strategic Materials Recovered from Rare Earth"
         id="outputs-hero-title"
       >
         <p>
-          Red mud is not a single-metal resource. It is a complex, surface-available
+          Rare earth is not a single-metal resource. It is a complex, surface-available
           polymetallic deposit formed during alumina refining.
         </p>
         <p>
@@ -49,7 +49,7 @@ export default function OutputsPage() {
                 "Iron-based coagulants and industrial intermediates"
               ]}
             />
-            <p className="font-semibold mt-4 mb-2">Indicative Purity Targets</p>
+            <p className="font-semibold">Indicative Purity Targets</p>
             <List
               items={[
                 "≥95% Fe₂O₃ for pigment and industrial use",
@@ -71,7 +71,7 @@ export default function OutputsPage() {
         <Card title="Value Proposition" className="mt-6">
           <List
             items={[
-              "Converts the largest mass fraction of red mud into revenue-generating products",
+              "Converts the largest mass fraction of rare earth into revenue-generating products",
               "Eliminates long-term storage liability",
               "Enables zero-waste plant operation"
             ]}
@@ -99,7 +99,7 @@ export default function OutputsPage() {
                 "Convertible to titanium dioxide (TiO₂) or downstream titanium compounds"
               ]}
             />
-            <p className="font-semibold mt-4 mb-2">Indicative Purity Targets</p>
+            <p className="font-semibold">Indicative Purity Targets</p>
             <List
               items={[
                 "90–98% TiO₂ equivalent, depending on downstream specification",
@@ -162,7 +162,7 @@ export default function OutputsPage() {
                 "Mixed REE concentrates as intermediate products where appropriate"
               ]}
             />
-            <p className="font-semibold mt-4 mb-2">Indicative Purity Targets</p>
+            <p className="font-semibold">Indicative Purity Targets</p>
             <List
               items={[
                 "95–99% REO (separated oxide streams)",

@@ -1,6 +1,6 @@
-# Red Mud Critical Minerals Platform
+# Rare Earth Critical Minerals Platform
 
-Red Mud is a project focused on transforming bauxite residue into a reliable source of critical minerals. By turning an underused industrial byproduct into valuable materials, the platform supports more resilient supply chains and cleaner industrial outcomes.
+Rare Earth is a project focused on transforming bauxite residue into a reliable source of critical minerals. By turning an underused industrial byproduct into valuable materials, the platform supports more resilient supply chains and cleaner industrial outcomes.
 
 ## Getting Started
 
@@ -13,7 +13,7 @@ To get started:
 
 ## Purpose
 
-This repository exists to define, organize, and communicate the development of the Red Mud Critical Minerals Platform. It serves as a central place for project information, technical direction, and future implementation details as the platform evolves.
+This repository exists to define, organize, and communicate the development of the Rare Earth Critical Minerals Platform. It serves as a central place for project information, technical direction, and future implementation details as the platform evolves.
 
 ## Future Sections (Placeholder)
 

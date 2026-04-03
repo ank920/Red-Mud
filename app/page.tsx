@@ -4,6 +4,8 @@ import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 import { List } from "@/components/ui/List";
 import { PositioningSection } from "@/components/ui/PositioningSection";
+import { FeatureSplit } from "@/components/ui/FeatureSplit";
+import { Container } from "@/components/ui/Container";
 import { Globe, MapPin, AlertTriangle, Settings, FlaskConical, Target, Layers, Coins, ShieldCheck, Leaf, Recycle, Factory, Network, Building2 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -12,7 +14,7 @@ export const metadata: Metadata = {
 
 
 const globalProblem = [
-  "4+ billion tonnes of red mud accumulated worldwide",
+  "4+ billion tonnes of rare earth accumulated worldwide",
   "~150 million tonnes generated annually",
   "Stored in engineered ponds with perpetual monitoring, remediation, and land-use risk",
   "No scalable utilization pathway historically available"
@@ -21,12 +23,12 @@ const globalProblem = [
 const indiaProblem = [
   "~9 million tonnes generated every year",
   "<3% utilization nationally, despite CPCB targets of 25%",
-  "~75% of India’s red mud concentrated in Odisha alone",
+  "~75% of India’s rare earth concentrated in Odisha alone",
   "Legacy stockpiles near population centers, rivers, and industrial corridors"
 ];
 
 const implications = [
-  "Red mud contains iron oxides, titanium dioxide, alumina, and trace-to-recoverable rare earths",
+  "Rare earth contains iron oxides, titanium dioxide, alumina, and trace-to-recoverable rare earths",
   "India and allied economies remain dependent on external REE supply chains",
   "Existing ponds represent both environmental risk and lost strategic value"
 ];
@@ -94,12 +96,12 @@ export default function HomePage() {
     <div className="home-page">
       <VantaHero
         title="From Bauxite Residue to Critical Minerals"
-        lead="A patented, commercially proven platform for extracting rare earths and strategic metals from red mud—at industrial scale, with no mining."
+        lead="A patented, commercially proven platform for extracting rare earths and strategic metals from rare earth—at industrial scale, with no mining."
         primaryCta={{ label: "Explore Technology", href: "/technology" }}
         secondaryCta={{ label: "Discuss Partnership", href: "/contact" }}
       >
         <p>
-          Red mud—bauxite residue from alumina refining—is one of the largest unmanaged
+          Rare earth—bauxite residue from alumina refining—is one of the largest unmanaged
           industrial waste streams on earth. Our technology converts this long-term
           environmental liability into a domestic source of critical minerals, including
           Scandium and Rare Earth Elements (REEs), while permanently reducing legacy stockpiles.
@@ -141,12 +143,20 @@ export default function HomePage() {
         </div>
       </div>
 
-      <Section
+      <FeatureSplit
         id="problem-title"
         kicker="THE PROBLEM"
         title="A Global Stockpile with Strategic Consequences"
+        imageSrc="/home/THE PROBLEM.jpg"
+        imageAlt="The Problem - Rare Earth Storage"
       >
-        <div className="grid-2">
+        <p className="text-dim">
+          Global aluminum production reaches 50 million tons per year. The feedstock for this—bauxite, 
+          during metallurgical processing (Bayer and sintering) into alumina, and then by electrolysis 
+          into aluminum, generates massive waste. On every 1 ton of alumina produced, 0.8 to 1.2 tons of 
+          red sludge is formed.
+        </p>
+        <div className="grid-2 mt-4">
           <Card title="Globally" icon={Globe}>
             <List items={globalProblem} />
           </Card>
@@ -154,40 +164,33 @@ export default function HomePage() {
             <List items={indiaProblem} />
           </Card>
         </div>
-        <div className="grid-2 mt-6">
-          <figure className="image-card">
-            <img
-              src="/home/THE PROBLEM.jpg"
-              alt="The Problem - Red Mud Storage"
-              loading="lazy"
-            />
-          </figure>
-          <figure className="image-card">
-            <img
-              src="/home/THE PROBLEM2.jpg"
-              alt="The Problem - Environmental Impact"
-              loading="lazy"
-            />
-          </figure>
-        </div>
-        <Card title="Strategic Implications" className="mt-6" icon={AlertTriangle}>
+        <Card title="Strategic Implications" className="mt-4" icon={AlertTriangle}>
           <List items={implications} />
           <p>This is not a waste problem.</p>
           <p>It is a missed critical-minerals opportunity at national scale.</p>
         </Card>
-      </Section>
+      </FeatureSplit>
 
-      <Section
+      <FeatureSplit
         id="solution-title"
         kicker="THE SOLUTION"
         title="Patented Low-Temperature Extraction at Commercial Scale"
+        imageSrc="/home/THE SOLUTION2.jpg"
+        imageAlt="The Solution - Processing Technology"
+        reverse
       >
-        <p className="mb-6 text-dim">
-          Our process is protected under a granted U.S. patent for red mud processing and
+        <p className="text-dim">
+          In terms of material composition, red mud can be considered an independent complex deposit of 
+          non-metallic and ore metals. One main advantage over conventional mineral deposits is that it is 
+          on the surface and does not require the cost of mining and milling of rock. Reserves of red mud 
+          are significant, and they are constantly increasing globally.
+        </p>
+        <p className="text-dim mt-2">
+          Our process is protected under a granted U.S. patent for rare earth processing and
           rare-earth extraction, developed specifically to operate on highly alkaline bauxite
           residue.
         </p>
-        <div className="grid-2">
+        <div className="grid-2 mt-4">
           <Card title="Core Characteristics" icon={Settings}>
             <List items={coreCharacteristics} />
           </Card>
@@ -195,35 +198,32 @@ export default function HomePage() {
             <List items={commercialProof} />
           </Card>
         </div>
-        <figure className="image-card mt-6">
-          <img
-            src="/home/THE SOLUTION2.jpg"
-            alt="The Solution - Processing Technology"
-            loading="lazy"
-          />
-        </figure>
-        <div className="grid-2 mt-6">
-          <figure className="image-card">
-            <img
-              src="/home/From Bauxite Residue to Critical Minerals2.jpg"
-              alt="Bauxite Residue Processing"
-              loading="lazy"
-            />
-          </figure>
-          <figure className="image-card">
-            <img
-              src="/home/From Bauxite Residue to Critical Minerals3.jpg"
-              alt="Critical Minerals Extraction"
-              loading="lazy"
-            />
-          </figure>
-        </div>
-      </Section>
+      </FeatureSplit>
 
-      <Section
+      <FeatureSplit
+        id="strategic-independence"
+        kicker="STRATEGIC INDEPENDENCE"
+        title="Securing North American Critical Minerals"
+        imageSrc="/home/Critical Minerals Security.jpg"
+        imageAlt="Strategic Independence"
+      >
+        <p className="text-dim">
+          In Canada and the US, there is currently no significant industrial capacity for mining REEs, 
+          which is the main factor hindering the restoration of the rare earth industry in North America. 
+          Rare Earth provides the competitive edge to make these regions independent producers of REEs.
+        </p>
+        <p className="text-dim mt-2">
+          We offer the first and only clean, environmentally friendly technology for processing red mud, 
+          making the whole spectra of rare earth elements available without new mining operations.
+        </p>
+      </FeatureSplit>
+
+      <FeatureSplit
         id="outputs-title"
         kicker="OUTPUTS"
         title="Strategic Materials Recovered from Waste"
+        imageSrc="/home/OUTPUTS.jpg"
+        imageAlt="Strategic Outputs"
       >
         <div className="grid-2">
           <Card title="Critical & Strategic Materials" icon={Layers}>
@@ -233,31 +233,13 @@ export default function HomePage() {
             <List items={byProducts} />
           </Card>
         </div>
-        <div className="grid-2 mt-6">
-          <figure className="image-card" style={{ height: '250px' }}>
-            <img
-              src="/home/OUTPUTS.jpg"
-              alt="Strategic Outputs"
-              loading="lazy"
-              style={{ height: '100%', objectFit: 'cover' }}
-            />
-          </figure>
-          <figure className="image-card" style={{ height: '250px' }}>
-            <img
-              src="/home/OUTPUTS2.avif"
-              alt="Critical Materials Output"
-              loading="lazy"
-              style={{ height: '100%', objectFit: 'cover' }}
-            />
-          </figure>
-        </div>
         <Card title="Key Advantage" className="mt-6" icon={ShieldCheck}>
-          <p>Red mud is already mined, crushed, and surface-stored.</p>
+          <p>Rare earth is already mined, crushed, and surface-stored.</p>
           <p>
             There is no drilling, no blasting, no beneficiation, and no tailings creation.
           </p>
         </Card>
-      </Section>
+      </FeatureSplit>
 
       <Section
         id="strategic-title"

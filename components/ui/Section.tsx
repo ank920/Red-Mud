@@ -1,6 +1,7 @@
 import { LucideIcon } from "lucide-react";
 import { ReactNode } from "react";
 import { ScrollReveal } from "./ScrollReveal";
+import { Container } from "./Container";
 
 interface SectionProps {
     id?: string;
@@ -31,7 +32,7 @@ export function Section({
             aria-labelledby={id}
             style={dark ? { background: "#0d1117", color: "#fff" } : undefined}
         >
-            <div className="container">
+            <Container>
                 <ScrollReveal animation="slideUp">
                     {(kicker || title || Icon) && (
                         <div className="section-heading">
@@ -63,7 +64,7 @@ export function Section({
                     )}
                     {children}
                 </ScrollReveal>
-            </div>
+            </Container>
         </Tag>
     );
 }

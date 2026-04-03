@@ -6,7 +6,7 @@ export async function GET() {
   return NextResponse.json(
     {
       status: "ok",
-      service: "red-mud-platform",
+      service: "rare-earth-platform",
       timestamp: new Date().toISOString()
     },
     { status: 200 }

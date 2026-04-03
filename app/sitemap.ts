@@ -13,7 +13,7 @@ const routes = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://red-mud.vercel.app";
+  const baseUrl = "https://rare-earth.vercel.app";
 
   return routes.map((route) => ({
     url: `${baseUrl}${route}`,

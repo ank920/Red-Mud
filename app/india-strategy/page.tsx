@@ -18,17 +18,17 @@ export default function IndiaStrategyPage() {
         kicker="INDIA STRATEGY & POLICY"
         title="Turning India's Largest Industrial Liability into a Strategic Mineral Advantage"
         imageSrc="/INDIA STRATEGY & POLICY/HERO SECTION.jpg"
-        imageAlt="India Strategy for Red Mud Processing"
+        imageAlt="India Strategy for Rare Earth Processing"
         id="india-hero-title"
       >
         <p>
-          India is the fourth-largest generator of bauxite residue (red mud) globally. What has
+          India is the fourth-largest generator of bauxite residue (rare earth) globally. What has
           historically been treated as a waste-management challenge is now emerging as a
           strategic lever for critical-minerals security, industrial remediation, and Atmanirbhar
           Bharat.
         </p>
         <p>
-          Our approach positions red mud not as an environmental burden, but as a domestically
+          Our approach positions rare earth not as an environmental burden, but as a domestically
           available, surface-stored polymetallic resource—capable of supplying scandium, rare
           earth elements, titanium, and iron oxides at industrial scale.
         </p>
@@ -36,13 +36,13 @@ export default function IndiaStrategyPage() {
 
       <Section
         id="reality-title"
-        kicker="INDIA'S RED MUD REALITY"
+        kicker="INDIA'S RARE EARTH REALITY"
         title="Scale, Concentration, and Risk"
       >
         <Card icon={AlertTriangle}>
           <List
             items={[
-              "~9 million tonnes/year of red mud generated nationally",
+              "~9 million tonnes/year of rare earth generated nationally",
               "<3% utilization rate, far below the 25% target articulated by regulators",
               "~8.7 million tonnes/year net accumulation into engineered storage ponds"
             ]}
@@ -53,8 +53,8 @@ export default function IndiaStrategyPage() {
         <div className="grid-2 mt-6">
           <StatCard
             value="9M t/year"
-            label="Annual Red Mud Generation"
-            description="India's total red mud production"
+            label="Annual Rare Earth Generation"
+            description="India's total rare earth production"
             icon={Factory}
           />
           <StatCard
@@ -67,7 +67,7 @@ export default function IndiaStrategyPage() {
         <div className="grid-2 mt-6">
           <Card title="Geographic Concentration" icon={Map}>
             <ul className="home-list">
-              <li>Odisha contributes ~75–80% of India’s annual red-mud output</li>
+              <li>Odisha contributes ~75–80% of India’s annual rare-earth output</li>
               <li>
                 Major clusters around:
                 <ul className="nested-list">
@@ -91,7 +91,7 @@ export default function IndiaStrategyPage() {
           </Card>
         </div>
         <Card title="Key Insight:" className="mt-6" icon={Lightbulb}>
-          <p>India’s red-mud challenge is not future-tense.</p>
+          <p>India’s rare-earth challenge is not future-tense.</p>
           <p>It is already accumulated, geographically concentrated, and policy-relevant today.</p>
         </Card>
         <div className="grid-2 mt-6">
@@ -142,7 +142,7 @@ export default function IndiaStrategyPage() {
         <figure className="image-card image-card-large mt-6">
           <img
             src="/INDIA STRATEGY & POLICY/Strategic Mineral Potential.jpg"
-            alt="Strategic Mineral Potential in Red Mud"
+            alt="Strategic Mineral Potential in Rare Earth"
             loading="lazy"
           />
         </figure>
@@ -201,7 +201,7 @@ export default function IndiaStrategyPage() {
           <p>Alignment:</p>
           <List
             items={[
-              "Red mud becomes a secondary mineral resource",
+              "Rare earth becomes a secondary mineral resource",
               "Multi-output recovery improves economic resilience",
               "Supports indigenous alloy, battery, and clean-energy supply chains"
             ]}
@@ -210,7 +210,7 @@ export default function IndiaStrategyPage() {
         <Card title="4. ESG, Land Use & Social License" className="mt-6" icon={Leaf}>
           <List
             items={[
-              "Red mud ponds occupy scarce industrial land",
+              "Rare earth ponds occupy scarce industrial land",
               "Long-term storage imposes intergenerational risk"
             ]}
           />
@@ -251,7 +251,7 @@ export default function IndiaStrategyPage() {
               Accepts:
               <ul className="nested-list">
                 <li>Live residue streams</li>
-                <li>Dewatered red mud</li>
+                <li>Dewatered rare earth</li>
                 <li>Legacy pond material</li>
               </ul>
             </li>
@@ -313,7 +313,7 @@ export default function IndiaStrategyPage() {
 
       <PositioningSection
         title="India already owns one of the world's largest critical-minerals resources."
-        description="It is stored as red mud. The question is no longer whether to remediate it—but whether to do so in a way that strengthens national capability."
+        description="It is stored as rare earth. The question is no longer whether to remediate it—but whether to do so in a way that strengthens national capability."
         buttons={[
           { label: "Technology Details", href: "/technology" },
           { label: "Partnership Models", href: "/partnerships" }
