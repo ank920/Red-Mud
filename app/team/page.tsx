@@ -91,10 +91,12 @@ export default function TeamPage() {
         </p>
       </VantaHero>
 
-      <section className="section py-16">
+      <section className="team-section">
         <Container>
-          <h2 className="text-3xl font-bold mb-2">Executive Leadership</h2>
-          <p className="text-dim mb-8">Driving the commercialisation of advanced energy platforms.</p>
+          <div className="team-section-heading">
+            <h2>Executive Leadership</h2>
+            <p className="text-dim">Driving the commercialisation of advanced energy platforms.</p>
+          </div>
           
           <TeamGrid executives={executives} advisors={advisors} />
         </Container>

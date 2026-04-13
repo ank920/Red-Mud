@@ -13,7 +13,7 @@ export function StatCard({ value, label, description, icon: Icon, className = ""
         <figure className={`stat-card ${className}`}>
             {Icon && (
                 <div className="stat-icon" aria-hidden="true">
-                    <Icon className="h-8 w-8" />
+                    <Icon size={30} strokeWidth={2} />
                 </div>
             )}
             <figcaption>

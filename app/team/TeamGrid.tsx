@@ -44,12 +44,12 @@ export function TeamGrid({ executives, advisors }: TeamGridProps) {
         ))}
       </motion.div>
 
-      <div style={{ marginTop: "8rem" }}>
+      <div className="team-subsection">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-3xl font-bold mb-2"
+          className="team-subsection-title"
         >
           Governance & Strategic Advisors
         </motion.h2>
@@ -57,7 +57,7 @@ export function TeamGrid({ executives, advisors }: TeamGridProps) {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-dim mb-10 max-w-3xl"
+          className="team-subsection-lead text-dim"
         >
           Strategic oversight provided by senior advisors with deep experience across energy infrastructure financing, venture capital, and global technology commercialization. We are actively expanding this board to include leaders from global industrial engineering and project finance institutions.
         </motion.p>

@@ -44,21 +44,12 @@ export function Section({
                                         </span>
                                     )}
                                     {kicker && (
-                                        <p className="kicker" style={{
-                                            display: "inline-flex",
-                                            alignItems: "center",
-                                            gap: "0.6rem",
-                                            margin: 0,
-                                        }}>
-                                            {kicker}
-                                        </p>
+                                        <p className="kicker section-kicker">{kicker}</p>
                                     )}
                                 </div>
                             )}
                             {title && (
-                                <h2 id={id} style={{ marginTop: "0.6rem" }}>
-                                    {title}
-                                </h2>
+                                <h2 id={id}>{title}</h2>
                             )}
                         </div>
                     )}

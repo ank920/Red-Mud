@@ -97,9 +97,9 @@ export function SiteShell({ children }: SiteShellProps) {
               onClick={() => setMobileNavOpen((prev) => !prev)}
             >
               {mobileNavOpen ? (
-                <X className="h-6 w-6 text-[var(--accent)]" />
+                <X size={24} color="var(--accent)" />
               ) : (
-                <Menu className="h-6 w-6 text-[var(--text)]" />
+                <Menu size={24} color="currentColor" />
               )}
               <span className="menu-toggle-label">{mobileNavOpen ? "Close" : "Menu"}</span>
             </button>

@@ -12,6 +12,11 @@ interface CardProps {
 }
 
 export function Card({ title, children, className = "", icon: Icon, imageSrc, imageAlt }: CardProps) {
+  const headerClassName = [
+    "card-header",
+    !title && Icon ? "card-header-icon-only" : ""
+  ].filter(Boolean).join(" ");
+
   return (
     <MotionCardWrapper className={`card ${className}`}>
       {imageSrc && (
@@ -20,29 +25,18 @@ export function Card({ title, children, className = "", icon: Icon, imageSrc, im
         </div>
       )}
       {(title || Icon) && (
-        <div className="card-header pb-2 mb-2" style={{ display: "flex", flexDirection: "column", borderBottom: "1px solid var(--line)", gap: "0.25rem" }}>
+        <div className={headerClassName}>
           {Icon && (
-            <span className="card-icon-badge" style={{
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              width: 38,
-              height: 38,
-              borderRadius: "10px",
-              background: "var(--accent-soft)",
-              marginBottom: "0.25rem",
-            }}>
-              <Icon size={20} style={{ color: "var(--accent)" }} strokeWidth={2} />
+            <span className="card-icon-badge">
+              <Icon size={20} color="var(--accent)" strokeWidth={2} />
             </span>
           )}
           {title && (
-            <h3 style={{ margin: 0, fontSize: "1.1rem", fontWeight: 700, color: "var(--text)", letterSpacing: "-0.01em" }}>
-              {title}
-            </h3>
+            <h3>{title}</h3>
           )}
         </div>
       )}
-      <div className="card-body" style={{ display: "flex", flexDirection: "column", gap: "0.4rem", flex: 1 }}>
+      <div className="card-body">
         {children}
       </div>
     </MotionCardWrapper>

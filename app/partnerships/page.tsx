@@ -110,7 +110,7 @@ export default function PartnershipsPage() {
           </p>
         </Card>
 
-        <h2 className="text-xl font-bold mt-8">2. TECHNOLOGY LICENSING</h2>
+        <h2 className="subsection-title">2. TECHNOLOGY LICENSING</h2>
         <Card icon={FileBadge}>
           <p className="font-semibold">Low Capital. Rapid Replication. Asset-Light Scaling.</p>
           <p>
@@ -160,7 +160,7 @@ export default function PartnershipsPage() {
           />
         </figure>
 
-        <h2 className="text-xl font-bold mt-8">3. BUILD-OWN-OPERATE (BOO)</h2>
+        <h2 className="subsection-title">3. BUILD-OWN-OPERATE (BOO)</h2>
         <Card icon={Factory}>
           <p className="font-semibold">Turnkey Remediation With Zero Capital Burden for the Producer</p>
           <p>
