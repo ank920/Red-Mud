@@ -45,12 +45,12 @@ export function Hero({
             {/* Full-bleed media background */}
             <div className="page-hero-media">
                 {videoSrc ? (
-                    <video autoPlay loop muted playsInline poster={imageSrc} aria-hidden="true">
-                        <source src={videoSrc} type="video/mp4" />
+                    <video autoPlay loop muted playsInline poster={imageSrc ? encodeURI(imageSrc) : undefined} aria-hidden="true">
+                        <source src={encodeURI(videoSrc)} type="video/mp4" />
                     </video>
                 ) : imageSrc ? (
                     // eslint-disable-next-line @next/next/no-img-element
-                    <img src={imageSrc} alt={imageAlt || ""} loading="eager" aria-hidden="true" />
+                    <img src={encodeURI(imageSrc)} alt={imageAlt || ""} loading="eager" aria-hidden="true" />
                 ) : null}
                 {/* Dark gradient overlay – same style as VantaHero */}
                 <div className="page-hero-overlay" aria-hidden="true" />
@@ -81,12 +81,12 @@ export function Hero({
                         {(primaryCta || secondaryCta) && (
                             <motion.div className="vanta-cta-row" variants={fadeUp}>
                                 {primaryCta && (
-                                    <a href={primaryCta.href} className="btn btn-primary">
+                                    <a href={primaryCta.href} className="btn btn-slide">
                                         {primaryCta.label}
                                     </a>
                                 )}
                                 {secondaryCta && (
-                                    <a href={secondaryCta.href} className="btn btn-ghost-white">
+                                    <a href={secondaryCta.href} className="btn btn-slide">
                                         {secondaryCta.label}
                                     </a>
                                 )}

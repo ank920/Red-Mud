@@ -27,29 +27,30 @@ export function FeatureSplit({
     return (
         <section className={`feature-split-section ${reverse ? 'reverse' : ''}`} id={id}>
             <Container>
-                <div className="feature-split-grid">
+                <div className="feature-split-grid" style={{ alignItems: 'center' }}>
                     <motion.div 
-                        className="feature-split-content"
+                        className="feature-split-content image-styled-content"
                         variants={staggerContainer}
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, margin: "-10%" }}
                     >
-                        {kicker && <motion.p variants={fadeUp} className="kicker">{kicker}</motion.p>}
-                        <motion.h2 variants={fadeUp}>{title}</motion.h2>
-                        <motion.div variants={fadeUp} className="feature-split-body">
+                        {kicker && <motion.p variants={fadeUp} className="image-styled-kicker">{kicker}</motion.p>}
+                        <motion.h2 variants={fadeUp} className="image-styled-title">{title}</motion.h2>
+                        <motion.div variants={fadeUp} className="image-styled-body">
                             {children}
                         </motion.div>
                     </motion.div>
                     <div className="feature-split-image-col">
                         <motion.figure 
-                            className="feature-split-image"
+                            className="home-media-frame"
+                            style={{ borderRadius: '20px', minHeight: 'unset', aspectRatio: '4/3', margin: 0 }}
                             variants={imageReveal}
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true, margin: "-10%" }}
                         >
-                            <img src={imageSrc} alt={imageAlt} loading="lazy" />
+                            <img src={encodeURI(imageSrc)} alt={imageAlt} loading="lazy" />
                         </motion.figure>
                     </div>
                 </div>

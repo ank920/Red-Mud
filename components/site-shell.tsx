@@ -80,7 +80,7 @@ export function SiteShell({ children }: SiteShellProps) {
     <>
       <a className="skip-link" href="#content">Skip to content</a>
       <div className="site-shell">
-        <header className={`site-header${scrolled ? " scrolled" : ""}${mobileNavOpen ? " menu-open" : ""}`} aria-label="Primary">
+        <header className={`site-header${scrolled ? " scrolled" : ""}${mobileNavOpen ? " menu-open" : ""}${pathname === '/team' ? " light-nav" : " dark-nav"}`} aria-label="Primary">
           <div className="container site-header-inner">
             {/* Brand logotype: RARE in orange, EARTH in dark */}
             <Link className="brand" href="/" aria-label="Rare Earth home" onClick={() => setMobileNavOpen(false)}>
@@ -127,7 +127,7 @@ export function SiteShell({ children }: SiteShellProps) {
                 <li>
                   <Link
                     href="/contact"
-                    className="nav-cta"
+                    className="btn btn-slide"
                     onClick={() => setMobileNavOpen(false)}
                   >
                     Contact Us

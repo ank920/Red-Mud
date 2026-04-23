@@ -31,7 +31,7 @@ export function PositioningSection({
                                 <Link
                                     key={index}
                                     href={button.href}
-                                    className={`btn ${index === 0 ? "btn-primary" : "btn-ghost-white"}`}
+                                    className="btn btn-slide"
                                 >
                                     {button.label}
                                 </Link>

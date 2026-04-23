@@ -56,7 +56,7 @@ export function Footer() {
                     <div className="footer-col cta-col">
                         <h4>Engagement</h4>
                         <p>Partner for industrial-scale remediation and critical mineral supply.</p>
-                        <Link href="/contact" className="footer-cta-btn">
+                        <Link href="/contact" className="btn btn-slide">
                             Start Conversation
                         </Link>
                     </div>

@@ -7,6 +7,8 @@ type Person = {
   name: string;
   role: string;
   background: string;
+  tags?: string[];
+  quote?: string;
 };
 
 type TeamGridProps = {
@@ -27,62 +29,92 @@ export function TeamGrid({ executives, advisors }: TeamGridProps) {
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        className="team-grid"
+        viewport={{ once: true, margin: "-10%" }}
+        className="resume-grid"
       >
         {executives.map((person, idx) => (
-          <motion.div variants={fadeUp} key={idx} className="profile-card">
-            <div className="profile-monogram">{getMonogram(person.name)}</div>
-            <div className="profile-header mt-4">
-              <h3 className="profile-name">{person.name}</h3>
-              <span className="profile-role-pill">{person.role}</span>
+          <motion.div variants={fadeUp} key={idx} className="resume-card">
+            
+            <div className="resume-header">
+               <div className="resume-avatar resume-avatar-green">
+                  {getMonogram(person.name)}
+               </div>
+               <div>
+                 <h3 className="resume-name">{person.name}</h3>
+                 <p className="resume-role">{person.role}</p>
+               </div>
             </div>
-            <div className="profile-body">
-              <p>{person.background}</p>
-            </div>
+
+            {person.tags && (
+              <div className="resume-tags">
+                {person.tags.map(tag => (
+                  <span key={tag} className="resume-tag highlight">{tag}</span>
+                ))}
+              </div>
+            )}
+
+            <p className="resume-bio">
+              {person.background}
+            </p>
+
+            {person.quote && (
+              <div className="resume-quote-box">
+                 <p className="resume-quote-text">"{person.quote}"</p>
+              </div>
+            )}
+
           </motion.div>
         ))}
       </motion.div>
 
-      <div className="team-subsection">
-        <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="team-subsection-title"
-        >
-          Governance & Strategic Advisors
-        </motion.h2>
-        <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="team-subsection-lead text-dim"
-        >
-          Strategic oversight provided by senior advisors with deep experience across energy infrastructure financing, venture capital, and global technology commercialization. We are actively expanding this board to include leaders from global industrial engineering and project finance institutions.
-        </motion.p>
-
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="advisors-grid"
-        >
-          {advisors.map((person, idx) => (
-            <motion.div variants={fadeUp} key={idx} className="profile-card">
-              <div className="profile-monogram">{getMonogram(person.name)}</div>
-              <div className="profile-header mt-4">
-                <h3 className="profile-name">{person.name}</h3>
-                <span className="profile-role-pill">{person.role}</span>
-              </div>
-              <div className="profile-body">
-                <p>{person.background}</p>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+      <div style={{ marginTop: '4rem', marginBottom: '2rem' }}>
+        <p className="image-styled-kicker" style={{ color: '#ea580c' }}>ADVISORY BOARD</p>
+        <h2 style={{ fontSize: '2rem', fontWeight: 800, color: '#0f172a', margin: 0 }}>Board of Advisors</h2>
       </div>
+
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-10%" }}
+        style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}
+      >
+        {advisors.map((person, idx) => (
+          <motion.div variants={fadeUp} key={idx} className="resume-card resume-card-horizontal">
+            
+            <div>
+              <div className="resume-header">
+                <div className="resume-avatar resume-avatar-green">
+                    {getMonogram(person.name)}
+                </div>
+                <div>
+                  <h3 className="resume-name">{person.name}</h3>
+                  <p className="resume-role">{person.role}</p>
+                </div>
+              </div>
+              <p className="resume-bio" style={{ marginBottom: 0 }}>
+                {person.background}
+              </p>
+            </div>
+
+            <div className="resume-data-col">
+              {person.tags && (
+                <div className="resume-tags" style={{ borderBottom: 'none', paddingBottom: 0, marginBottom: '1.5rem', gap: '0.75rem' }}>
+                  {person.tags.map(tag => (
+                    <span key={tag} className="resume-tag highlight">{tag}</span>
+                  ))}
+                </div>
+              )}
+              {person.quote && (
+                <div className="resume-quote-box green" style={{ margin: 0 }}>
+                  <p className="resume-quote-text">"{person.quote}"</p>
+                </div>
+              )}
+            </div>
+
+          </motion.div>
+        ))}
+      </motion.div>
     </>
   );
 }

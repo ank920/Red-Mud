@@ -24,7 +24,6 @@ export function ContactForm() {
         const formData = new FormData(e.currentTarget);
         const newErrors: FormErrors = {};
 
-        // Validate required fields
         if (!formData.get("organizationType")) {
             newErrors.organizationType = "Please select an organization type";
         }
@@ -48,12 +47,10 @@ export function ContactForm() {
 
         setErrors(newErrors);
 
-        // If there are errors, don't submit
         if (Object.keys(newErrors).length > 0) {
             return;
         }
 
-        // Submit the form
         setIsSubmitting(true);
         try {
             const response = await fetch("/api/intake", {
@@ -71,138 +68,221 @@ export function ContactForm() {
         }
     };
 
+    const fieldStyle: React.CSSProperties = {
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '0.375rem',
+    };
+
+    const labelStyle: React.CSSProperties = {
+        fontSize: '0.8rem',
+        fontWeight: 700,
+        color: '#374151',
+        letterSpacing: '0.04em',
+        textTransform: 'uppercase',
+    };
+
+    const inputStyle: React.CSSProperties = {
+        width: '100%',
+        padding: '0.75rem 1rem',
+        border: '1.5px solid #e2e8f0',
+        borderRadius: '10px',
+        fontSize: '0.95rem',
+        color: '#0f172a',
+        background: '#fff',
+        outline: 'none',
+        transition: 'border-color 0.2s',
+        fontFamily: 'inherit',
+    };
+
+    const errorStyle: React.CSSProperties = {
+        fontSize: '0.8rem',
+        color: '#dc2626',
+        fontWeight: 500,
+    };
+
     return (
-        <form className="card intake-form" onSubmit={handleSubmit} noValidate>
-            <fieldset>
-                <legend>
-                    Organization category <span className="required-indicator" aria-label="required">*</span>
-                </legend>
-                <div className="radio-grid">
-                    <label>
-                        <input
-                            type="radio"
-                            name="organizationType"
-                            value="Alumina Producers & Refinery Operators"
-                            required
-                        />
-                        Alumina Producers & Refinery Operators
-                    </label>
-                    <label>
-                        <input
-                            type="radio"
-                            name="organizationType"
-                            value="Government & Public-Sector Institutions"
-                            required
-                        />
-                        Government & Public-Sector Institutions
-                    </label>
-                    <label>
-                        <input
-                            type="radio"
-                            name="organizationType"
-                            value="Strategic & Institutional Investors"
-                            required
-                        />
-                        Strategic & Institutional Investors
-                    </label>
+        <form
+            onSubmit={handleSubmit}
+            noValidate
+            style={{
+                background: '#fff',
+                borderRadius: '20px',
+                border: '1px solid #e2e8f0',
+                padding: 'clamp(1.5rem, 4vw, 2.5rem)',
+                boxShadow: '0 4px 24px rgba(0,0,0,0.06)',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '1.75rem',
+            }}
+        >
+            {/* Organization Type */}
+            <div style={fieldStyle}>
+                <span style={labelStyle}>
+                    Organization Category <span style={{ color: '#dc2626' }}>*</span>
+                </span>
+                <div style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                    gap: '0.75rem',
+                    marginTop: '0.25rem',
+                }}>
+                    {[
+                        { value: "Alumina Producers & Refinery Operators", label: "Alumina Producers & Refinery Operators" },
+                        { value: "Government & Public-Sector Institutions", label: "Government & Public-Sector Institutions" },
+                        { value: "Strategic & Institutional Investors", label: "Strategic & Institutional Investors" },
+                    ].map((opt) => (
+                        <label key={opt.value} style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '0.625rem',
+                            padding: '0.75rem 1rem',
+                            border: '1.5px solid #e2e8f0',
+                            borderRadius: '10px',
+                            cursor: 'pointer',
+                            fontSize: '0.875rem',
+                            fontWeight: 500,
+                            color: '#374151',
+                            background: '#fafafa',
+                            transition: 'border-color 0.2s, background 0.2s',
+                        }}>
+                            <input
+                                type="radio"
+                                name="organizationType"
+                                value={opt.value}
+                                required
+                                style={{ accentColor: '#9a1f1f', width: '16px', height: '16px', flexShrink: 0 }}
+                            />
+                            {opt.label}
+                        </label>
+                    ))}
                 </div>
                 {errors.organizationType && (
-                    <span className="form-error" role="alert" aria-live="assertive">
-                        {errors.organizationType}
-                    </span>
+                    <span style={errorStyle} role="alert">{errors.organizationType}</span>
                 )}
-            </fieldset>
+            </div>
 
-            <div className="form-grid">
-                <label className="col-span-2">
-                    Organization name <span className="required-indicator" aria-label="required">*</span>
+            {/* Two-col fields */}
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem' }}>
+                <div style={{ ...fieldStyle, gridColumn: '1 / -1' }}>
+                    <label style={labelStyle}>
+                        Organization Name <span style={{ color: '#dc2626' }}>*</span>
+                    </label>
                     <input
                         type="text"
                         name="organizationName"
                         placeholder="Full legal or operating name"
                         aria-required="true"
-                        aria-invalid={errors.organizationName ? "true" : "false"}
+                        style={inputStyle}
                     />
                     {errors.organizationName && (
-                        <span className="form-error" role="alert" aria-live="assertive">
-                            {errors.organizationName}
-                        </span>
+                        <span style={errorStyle} role="alert">{errors.organizationName}</span>
                     )}
-                </label>
+                </div>
 
-                <label>
-                    Contact name <span className="required-indicator" aria-label="required">*</span>
+                <div style={fieldStyle}>
+                    <label style={labelStyle}>
+                        Contact Name <span style={{ color: '#dc2626' }}>*</span>
+                    </label>
                     <input
                         type="text"
                         name="contactName"
                         placeholder="Your full name"
                         aria-required="true"
-                        aria-invalid={errors.contactName ? "true" : "false"}
+                        style={inputStyle}
                     />
                     {errors.contactName && (
-                        <span className="form-error" role="alert" aria-live="assertive">
-                            {errors.contactName}
-                        </span>
+                        <span style={errorStyle} role="alert">{errors.contactName}</span>
                     )}
-                </label>
+                </div>
 
-                <label>
-                    Email address <span className="required-indicator" aria-label="required">*</span>
+                <div style={fieldStyle}>
+                    <label style={labelStyle}>
+                        Email Address <span style={{ color: '#dc2626' }}>*</span>
+                    </label>
                     <input
                         type="email"
                         name="contactEmail"
                         placeholder="your.email@organization.com"
                         aria-required="true"
-                        aria-invalid={errors.contactEmail ? "true" : "false"}
+                        style={inputStyle}
                     />
                     {errors.contactEmail && (
-                        <span className="form-error" role="alert" aria-live="assertive">
-                            {errors.contactEmail}
-                        </span>
+                        <span style={errorStyle} role="alert">{errors.contactEmail}</span>
                     )}
-                </label>
+                </div>
 
-                <label className="col-span-2">
-                    Project context or engagement objective <span className="required-indicator" aria-label="required">*</span>
+                <div style={{ ...fieldStyle, gridColumn: '1 / -1' }}>
+                    <label style={labelStyle}>
+                        Project Context or Engagement Objective <span style={{ color: '#dc2626' }}>*</span>
+                    </label>
                     <textarea
                         name="projectContext"
                         placeholder="Please describe the scope, timeline, and decision-making context for this inquiry."
                         aria-required="true"
-                        aria-invalid={errors.projectContext ? "true" : "false"}
+                        rows={5}
+                        style={{ ...inputStyle, resize: 'vertical', minHeight: '120px' }}
                     />
                     {errors.projectContext && (
-                        <span className="form-error" role="alert" aria-live="assertive">
-                            {errors.projectContext}
-                        </span>
+                        <span style={errorStyle} role="alert">{errors.projectContext}</span>
                     )}
-                </label>
+                </div>
 
-                <label className="col-span-2">
-                    Geographic focus (optional)
+                <div style={fieldStyle}>
+                    <label style={labelStyle}>Geographic Focus <span style={{ color: '#94a3b8', fontWeight: 400, textTransform: 'none', fontSize: '0.75rem' }}>(optional)</span></label>
                     <input
                         type="text"
                         name="geography"
                         placeholder="Country, state, or specific site"
+                        style={inputStyle}
                     />
-                </label>
+                </div>
 
-                <label className="col-span-2">
-                    Additional context or attachments (optional)
+                <div style={{ ...fieldStyle, gridColumn: '1 / -1' }}>
+                    <label style={labelStyle}>Additional Context <span style={{ color: '#94a3b8', fontWeight: 400, textTransform: 'none', fontSize: '0.75rem' }}>(optional)</span></label>
                     <textarea
                         name="additionalInfo"
                         placeholder="Any other relevant information"
+                        rows={3}
+                        style={{ ...inputStyle, resize: 'vertical' }}
                     />
-                </label>
+                </div>
             </div>
 
-            <p className="form-note">
-                <strong>Confidentiality:</strong> All submissions are treated as confidential and reviewed
+            {/* Confidentiality note */}
+            <p style={{
+                fontSize: '0.85rem',
+                color: '#64748b',
+                background: '#f8fafc',
+                border: '1px solid #e2e8f0',
+                borderRadius: '10px',
+                padding: '1rem 1.25rem',
+                margin: 0,
+                lineHeight: 1.6,
+            }}>
+                <strong style={{ color: '#374151' }}>Confidentiality:</strong> All submissions are treated as confidential and reviewed
                 internally before external distribution. We do not share contact details or project
                 information without explicit consent.
             </p>
 
-            <button type="submit" disabled={isSubmitting}>
-                {isSubmitting ? "Submitting..." : "Submit Inquiry"}
+            <button
+                type="submit"
+                disabled={isSubmitting}
+                style={{
+                    padding: '0.875rem 2.5rem',
+                    background: isSubmitting ? '#94a3b8' : '#9a1f1f',
+                    color: '#fff',
+                    border: 'none',
+                    borderRadius: '10px',
+                    fontSize: '0.95rem',
+                    fontWeight: 700,
+                    cursor: isSubmitting ? 'not-allowed' : 'pointer',
+                    letterSpacing: '0.02em',
+                    alignSelf: 'flex-start',
+                    transition: 'background 0.2s, transform 0.15s',
+                }}
+            >
+                {isSubmitting ? "Submitting..." : "Submit Inquiry →"}
             </button>
         </form>
     );

@@ -103,12 +103,12 @@ export function VantaHero({
                     {(primaryCta || secondaryCta) && (
                         <motion.div className="vanta-cta-row" variants={fadeUp}>
                             {primaryCta && (
-                                <Link href={primaryCta.href} className="btn btn-primary">
+                                <Link href={primaryCta.href} className="btn btn-slide">
                                     {primaryCta.label}
                                 </Link>
                             )}
                             {secondaryCta && (
-                                <Link href={secondaryCta.href} className="btn btn-ghost-white">
+                                <Link href={secondaryCta.href} className="btn btn-slide">
                                     {secondaryCta.label}
                                 </Link>
                             )}

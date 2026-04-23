@@ -1,14 +1,14 @@
+"use client";
+
 import type { Metadata } from "next";
 import { Hero } from "@/components/ui/Hero";
-import { Section } from "@/components/ui/Section";
-import { Card } from "@/components/ui/Card";
-import { List } from "@/components/ui/List";
 import { PositioningSection } from "@/components/ui/PositioningSection";
-import { Handshake, FileBadge, Factory, TrendingUp, ShieldCheck, Users, ArrowRightCircle, ClipboardCheck, FileText, Settings, Activity, Lightbulb, Building2 } from "lucide-react";
-
-export const metadata: Metadata = {
-  title: "Partnerships"
-};
+import { motion } from "framer-motion";
+import { fadeUp, staggerContainer } from "@/lib/motion";
+import { 
+  Handshake, FileBadge, Factory, TrendingUp, 
+  ShieldCheck, Users, Activity, FileText, Settings, Lightbulb, Building2
+} from "lucide-react";
 
 export default function PartnershipsPage() {
   return (
@@ -33,347 +33,218 @@ export default function PartnershipsPage() {
         </p>
       </Hero>
 
-      <Section
-        id="philosophy-title"
-        kicker="PARTNERSHIP PHILOSOPHY"
-        title="Aligning Environmental Remediation With Industrial Economics"
-      >
-        <Card icon={Lightbulb}>
-          <p>
-            Rare earth is not a speculative feedstock—it is a continuously generated, on-site
-            industrial liability. Our partnership models convert this liability into a monetizable
-            resource without disrupting alumina operations.
-          </p>
-          <p>Across all structures, the principles remain consistent:</p>
-          <List
-            items={[
-              "No interference with core alumina production",
-              "Modular, on-site or adjacent deployment",
-              "Zero-waste processing and regulatory alignment",
-              "Long-term visibility on mineral recovery and ESG outcomes"
-            ]}
-          />
-        </Card>
-        <figure className="image-card image-card-large mt-6">
-          <img
-            src="/partnership/Partnership Philosophy.jpg"
-            alt="Partnership Philosophy"
-            loading="lazy"
-          />
-        </figure>
-      </Section>
-
-      <Section
-        id="models-title"
-        kicker="CORE BUSINESS MODELS"
-        title="1. JOINT VENTURE (JV) WITH ALUMINA PRODUCERS"
-      >
-        <Card icon={Handshake}>
-          <p className="font-semibold">Shared Ownership. Shared Upside. Immediate Remediation.</p>
-          <p>
-            Under the JV model, a special-purpose vehicle is jointly owned with the alumina
-            producer to process current and legacy rare earth stockpiles.
-          </p>
-          <p className="font-semibold">Structure</p>
-          <List
-            items={[
-              "Dedicated JV entity",
-              "Equity participation by alumina producer and technology partner",
-              "Processing plant located on or adjacent to refinery site"
-            ]}
-          />
-        </Card>
-        <div className="grid-2 mt-6">
-          <Card title="Value for Alumina Producers" icon={TrendingUp}>
-            <List
-              items={[
-                "Elimination of long-term residue storage costs",
-                "Balance-sheet de-risking of environmental liabilities",
-                "Participation in downstream critical mineral revenues",
-                "ESG performance uplift without capex concentration risk"
-              ]}
-            />
-          </Card>
-          <Card title="Value for Investors" icon={ShieldCheck}>
-            <List
-              items={[
-                "Direct exposure to cash-generating processing assets",
-                "Feedstock security through captive rare earth supply",
-                "Long-term offtake visibility for critical minerals"
-              ]}
-            />
-          </Card>
-        </div>
-        <Card className="mt-6">
-          <p>
-            <span className="font-semibold">Best suited for:</span> Large integrated producers with substantial legacy stockpiles and long operating horizons.
-          </p>
-        </Card>
-
-        <h2 className="subsection-title">2. TECHNOLOGY LICENSING</h2>
-        <Card icon={FileBadge}>
-          <p className="font-semibold">Low Capital. Rapid Replication. Asset-Light Scaling.</p>
-          <p>
-            In licensing structures, partners deploy the patented extraction process under a
-            long-term license while technology ownership and process governance are retained
-            centrally.
-          </p>
-          <p className="font-semibold">Structure</p>
-          <List
-            items={[
-              "Upfront license fee",
-              "Ongoing royalty (percentage of gross processed material or recovered output)",
-              "Centralized technical oversight and performance auditing"
-            ]}
-          />
-        </Card>
-        <div className="grid-2 mt-6">
-          <Card title="Value for Alumina Producers" icon={TrendingUp}>
-            <List
-              items={[
-                "Minimal balance-sheet exposure",
-                "Rapid deployment across multiple sites",
-                "Predictable cost structure tied to throughput"
-              ]}
-            />
-          </Card>
-          <Card title="Value for Technology Owner" icon={ShieldCheck}>
-            <List
-              items={[
-                "Scalable global footprint",
-                "Recurring, high-margin royalty streams",
-                "Preservation of IP control and process integrity"
-              ]}
-            />
-          </Card>
-        </div>
-        <Card className="mt-6">
-          <p>
-            <span className="font-semibold">Best suited for:</span> Producers with multiple refineries or geographies seeking standardized deployment.
-          </p>
-        </Card>
-        <figure className="image-card image-card-large mt-6">
-          <img
-            src="/partnership/Technology Licensing.webp"
-            alt="Technology Licensing Model"
-            loading="lazy"
-          />
-        </figure>
-
-        <h2 className="subsection-title">3. BUILD-OWN-OPERATE (BOO)</h2>
-        <Card icon={Factory}>
-          <p className="font-semibold">Turnkey Remediation With Zero Capital Burden for the Producer</p>
-          <p>
-            In a BOO configuration, the processing plant is designed, financed, built, and operated
-            independently while the alumina producer supplies feedstock under a long-term
-            agreement.
-          </p>
-          <p className="font-semibold">Structure</p>
-          <List
-            items={[
-              "Independent project SPV",
-              "Long-term rare earth supply agreement",
-              "Revenue generated from mineral recovery"
-            ]}
-          />
-        </Card>
-        <div className="grid-2 mt-6">
-          <Card title="Value for Alumina Producers" icon={TrendingUp}>
-            <List
-              items={[
-                "No capital expenditure",
-                "Immediate reduction of environmental risk",
-                "Guaranteed remediation pathway for ongoing production",
-                "Optional revenue-sharing upside"
-              ]}
-            />
-          </Card>
-          <Card title="Value for Investors" icon={ShieldCheck}>
-            <List
-              items={[
-                "Infrastructure-style asset with contracted feedstock",
-                "Strong downside protection",
-                "Exposure to strategic minerals without mining risk"
-              ]}
-            />
-          </Card>
-        </div>
-        <Card className="mt-6">
-          <p>
-            <span className="font-semibold">Best suited for:</span> Producers prioritizing capital discipline and rapid ESG compliance.
-          </p>
-        </Card>
-        <figure className="image-card image-card-large mt-6">
-          <img
-            src="/partnership/BUILD-OWN-OPERATE.jpg"
-            alt="Build-Own-Operate Model"
-            loading="lazy"
-          />
-        </figure>
-      </Section>
-
-      <Section
-        id="flow-title"
-        kicker="DEPLOYMENT FLOW"
-        title="Partner with an Alumina Producer"
-      >
-        <div className="grid-2">
-          <Card title="Step 1: Site & Stockpile Assessment" icon={ClipboardCheck}>
-            <List
-              items={[
-                "Chemical and mineralogical characterization",
-                "Volume, age, and alkalinity profiling",
-                "Integration feasibility review"
-              ]}
-            />
-          </Card>
-          <Card title="Step 2: Commercial Structuring" icon={FileText}>
-            <List
-              items={[
-                "JV, Licensing, or BOO selection",
-                "Capex, opex, and revenue-share alignment",
-                "ESG and regulatory mapping"
-              ]}
-            />
-          </Card>
-        </div>
-        <div className="grid-2 mt-6">
-          <Card title="Step 3: Modular Plant Deployment" icon={Settings}>
-            <List
-              items={[
-                "Plug-and-play installation",
-                "No disruption to refinery operations",
-                "Phased capacity ramp-up"
-              ]}
-            />
-          </Card>
-          <Card title="Step 4: Long-Term Operations & Expansion" icon={Activity}>
-            <List
-              items={[
-                "Continuous processing of new residue",
-                "Drawdown of legacy stockpiles",
-                "Replication across additional sites"
-              ]}
-            />
-          </Card>
-        </div>
-        <div className="deployment-flow partner-flow-diagram mt-6">
-          <div className="flow-step start">
-            <div className="flow-content">
-              <span className="step-label">Step 1</span>
-              <span className="step-detail">Site & Stockpile Assessment</span>
+      {/* ── Section 1: Partnership Philosophy ── */}
+      <section className="tech-dashboard-section" id="philosophy-title">
+        <div className="container">
+          <motion.div
+            className="tech-split-card"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-5%" }}
+          >
+            <div className="tech-split-image-col">
+              <img src="/partnership/Partnership Philosophy.jpg" alt="Partnership Philosophy" className="tech-split-img" />
             </div>
-          </div>
-          <div className="flow-arrow"></div>
-          <div className="flow-step">
-            <div className="flow-content">
-              <span className="step-label">Step 2</span>
-              <span className="step-detail">Commercial Structuring</span>
+            <div className="tech-split-content">
+              <p className="image-styled-kicker">PARTNERSHIP PHILOSOPHY</p>
+              <h2 className="tech-card-title">Aligning Environmental Remediation With Industrial Economics</h2>
+              <p className="tech-card-desc">Rare earth is not a speculative feedstock—it is a continuously generated, on-site industrial liability. Our partnership models convert this liability into a monetizable resource without disrupting alumina operations.</p>
+
+              <div className="tech-chemistry-grid">
+                <div className="tech-chem-card">
+                  <div className="tech-chem-icon badge-orange"><Lightbulb size={20} /></div>
+                  <div>
+                    <h4>Zero Interference</h4>
+                    <p>Designed for modular, on-site or adjacent deployment without interrupting core alumina production.</p>
+                  </div>
+                </div>
+                <div className="tech-chem-card">
+                  <div className="tech-chem-icon badge-teal"><TrendingUp size={20} /></div>
+                  <div>
+                    <h4>Visible Outcomes</h4>
+                    <p>Delivering long-term visibility on both mineral recovery revenues and ESG compliance outcomes.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="tech-tag-row">
+                {["Modular Integration", "Zero-Waste Processing", "Balance-Sheet Alignment"].map(t => (
+                  <span key={t} className="tech-tag">{t}</span>
+                ))}
+              </div>
             </div>
-          </div>
-          <div className="flow-arrow"></div>
-          <div className="flow-step">
-            <div className="flow-content">
-              <span className="step-label">Step 3</span>
-              <span className="step-detail">Modular Plant Deployment</span>
-            </div>
-          </div>
-          <div className="flow-arrow"></div>
-          <div className="flow-step end">
-            <div className="flow-content">
-              <span className="step-label">Step 4</span>
-              <span className="step-detail">Long-Term Operations</span>
-            </div>
-          </div>
+          </motion.div>
         </div>
-        <figure className="image-card image-card-large mt-6">
-          <img
-            src="/partnership/Partner with an Alumina Producer.png"
-            alt="Partner with an Alumina Producer"
-            loading="lazy"
-          />
-        </figure>
-      </Section>
+      </section>
 
-      <Section
-        id="benefits-title"
-        kicker="STRATEGIC BENEFITS ACROSS ALL MODELS"
-        title="For Alumina Producers"
-      >
-        <div className="grid-2">
-          <Card title="For Alumina Producers" icon={Building2}>
-            <List
-              items={[
-                "Permanent reduction of rare earth liabilities",
-                "Conversion of waste into strategic revenue streams",
-                "Improved land utilization and regulatory positioning",
-                "Alignment with national critical mineral strategies"
-              ]}
-            />
-          </Card>
-          <Card title="For Investors & Strategic Capital" icon={TrendingUp}>
-            <List
-              items={[
-                "Access to critical minerals without geological mining risk",
-                "Long-duration assets backed by industrial feedstock",
-                "Strong ESG credentials with measurable impact",
-                "Protection through patent-backed technology and high barriers to entry"
-              ]}
-            />
-          </Card>
+      {/* ── Section 2: Core Business Models ── */}
+      <section className="tech-stages-section" style={{ background: '#f0f5f9' }} id="models-title">
+        <div className="container">
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-5%" }}
+          >
+            <motion.div variants={fadeUp} className="tech-stages-header">
+              <p className="image-styled-kicker">COMMERCIAL STRUCTURES</p>
+              <h2 className="tech-stages-heading">Three Core Business Models</h2>
+            </motion.div>
+
+            <div className="tech-stages-grid">
+              {/* JV Model */}
+              <motion.div variants={fadeUp} className="tech-stage-card">
+                <div className="tech-stage-img-wrap">
+                  <img src="/partnership/Joint Venture.jpg" alt="Joint Venture" loading="lazy" />
+                  <div className="tech-stage-badge" style={{ background: '#2563eb' }}>MDL</div>
+                </div>
+                <div className="tech-stage-body">
+                  <p className="tech-stage-kicker">MODEL 01</p>
+                  <h3>Joint Venture (JV)</h3>
+                  <p className="tech-stage-objective">Shared Ownership. Shared Upside. Immediate Remediation.</p>
+                  <ul className="tech-stage-list">
+                    <li>Dedicated JV entity on-site</li>
+                    <li>De-risks producer liabilities</li>
+                    <li>Direct critical mineral exposure</li>
+                  </ul>
+                  <div className="tech-stage-highlight">Best for: Large integrated producers with legacy stockpiles.</div>
+                </div>
+              </motion.div>
+
+              {/* Licensing Model */}
+              <motion.div variants={fadeUp} className="tech-stage-card">
+                <div className="tech-stage-img-wrap">
+                  <img src="/partnership/Technology Licensing.webp" alt="Technology Licensing" loading="lazy" />
+                  <div className="tech-stage-badge" style={{ background: '#7c3aed' }}>MDL</div>
+                </div>
+                <div className="tech-stage-body">
+                  <p className="tech-stage-kicker">MODEL 02</p>
+                  <h3>Technology Licensing</h3>
+                  <p className="tech-stage-objective">Low Capital. Rapid Replication. Asset-Light Scaling.</p>
+                  <ul className="tech-stage-list">
+                    <li>Minimal balance-sheet exposure</li>
+                    <li>Standardized rapid deployment</li>
+                    <li>Predictable royalty structures</li>
+                  </ul>
+                  <div className="tech-stage-highlight">Best for: Producers with multiple continuous refineries.</div>
+                </div>
+              </motion.div>
+
+              {/* BOO Model */}
+              <motion.div variants={fadeUp} className="tech-stage-card">
+                <div className="tech-stage-img-wrap">
+                  <img src="/partnership/BUILD-OWN-OPERATE.jpg" alt="Build-Own-Operate" loading="lazy" />
+                  <div className="tech-stage-badge" style={{ background: '#059669' }}>MDL</div>
+                </div>
+                <div className="tech-stage-body">
+                  <p className="tech-stage-kicker">MODEL 03</p>
+                  <h3>Build-Own-Operate (BOO)</h3>
+                  <p className="tech-stage-objective">Turnkey Remediation With Zero Capital Burden.</p>
+                  <ul className="tech-stage-list">
+                    <li>No capex for the producer</li>
+                    <li>Guaranteed remediation pathway</li>
+                    <li>Infrastructure-style asset returns</li>
+                  </ul>
+                  <div className="tech-stage-highlight">Best for: Producers prioritizing rapid ESG compliance.</div>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
         </div>
-        <figure className="image-card image-card-large mt-6">
-          <img
-            src="/partnership/Strategic Benefits.jpg"
-            alt="Strategic Benefits for All Partners"
-            loading="lazy"
-          />
-        </figure>
-      </Section>
+      </section>
 
-      <Section
-        id="why-title"
-        kicker="WHY PARTNERSHIPS MATTER"
-        title="No Single Stakeholder Solves This Alone"
-      >
-        <Card icon={Users}>
-          <p>
-            Rare earth remediation sits at the intersection of mining, materials science,
-            infrastructure, and public policy. Scalable deployment requires collaboration—not
-            one-off projects.
-          </p>
-          <p>This partnership framework is designed to:</p>
-          <List
-            items={[
-              "De-risk adoption for producers",
-              "Provide clarity and durability for investors",
-              "Enable national and regional critical-mineral security"
-            ]}
-          />
-        </Card>
-      </Section>
+      {/* ── Section 3: Deployment Flow ── */}
+      <section className="tech-dashboard-section" id="flow-title">
+        <div className="container">
+          <motion.div
+            className="tech-split-card"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-5%" }}
+          >
+            <div className="tech-split-content" style={{ paddingLeft: 'clamp(2rem, 4vw, 3.5rem)', paddingRight: 0 }}>
+              <p className="image-styled-kicker">DEPLOYMENT FLOW</p>
+              <h2 className="tech-card-title">Partnering With Proximity</h2>
+              <p className="tech-card-desc">Every rare earth stockpile is unique. We structure our engagement from initial testing to long-term operations.</p>
 
-      <Section
-        id="next-steps-title"
-        kicker="NEXT STEPS"
-        title="From Discussion to Deployment"
-      >
-        <Card icon={ArrowRightCircle}>
-          <List
-            items={[
-              "Confidential technical briefing",
-              "Site-specific feasibility assessment",
-              "Commercial model shortlisting",
-              "Transaction structuring and timeline alignment"
-            ]}
-          />
-          <p>We partner selectively. We deploy at scale.</p>
-          <p>
-            The opportunity is global, the feedstock is permanent, and the window for first-mover
-            advantage is finite.
-          </p>
-        </Card>
-      </Section>
+              <div className="tech-chemistry-grid" style={{ gridTemplateColumns: '1fr' }}>
+                <div className="tech-chem-card">
+                  <div className="tech-chem-icon badge-orange"><FileText size={20} /></div>
+                  <div>
+                    <h4>1. Assessment & Structuring</h4>
+                    <p>Chemical profiling, flow integration review, and selecting the optimal commercial model (JV/License/BOO).</p>
+                  </div>
+                </div>
+                <div className="tech-chem-card">
+                  <div className="tech-chem-icon badge-teal"><Settings size={20} /></div>
+                  <div>
+                    <h4>2. Deployment & Scale</h4>
+                    <p>Plug-and-play modular installation leading to continuous processing and phased capacity ramp up.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="tech-split-image-col">
+              <img src="/partnership/Partner with an Alumina Producer.png" alt="Partner Deployment Flow" className="tech-split-img" />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── Section 4: Strategic Benefits Grid ── */}
+      <section className="tech-dashboard-section tech-advantage-section" style={{ background: '#f8fafc' }} id="benefits-title">
+        <div className="container">
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-5%" }}
+          >
+            <motion.div variants={fadeUp} className="tech-advantage-header">
+              <p className="image-styled-kicker">SYNERGIES & BENEFITS</p>
+              <h2 className="tech-card-title">A Solution For Every Stakeholder</h2>
+              <p className="tech-card-desc" style={{ maxWidth: '60ch', margin: '1rem auto 0' }}>Rare earth remediation sits at the intersection of mining, materials science, infrastructure, and public policy. No single stakeholder solves this alone.</p>
+            </motion.div>
+
+            <div className="tech-advantage-grid">
+              <motion.div variants={fadeUp} className="tech-advantage-left">
+                <img src="/partnership/Strategic Benefits.jpg" alt="Strategic Benefits" className="tech-advantage-img" />
+              </motion.div>
+              <motion.div variants={fadeUp} className="tech-advantage-cards">
+                <div className="tech-adv-item" style={{ gridColumn: '1 / -1', background: 'transparent', boxShadow: 'none', border: 'none', padding: '0 0 1rem 0' }}>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', margin: 0, fontSize: '1.1rem', color: '#0f172a' }}>
+                    <Building2 size={24} color="#f97316"/> For Alumina Producers
+                  </h4>
+                </div>
+                <div className="tech-adv-item">
+                  <div className="tech-adv-icon badge-orange"><ShieldCheck size={20} /></div>
+                  <span>Permanent reduction of rare earth liabilities</span>
+                </div>
+                <div className="tech-adv-item">
+                  <div className="tech-adv-icon badge-orange"><TrendingUp size={20} /></div>
+                  <span>Conversion of waste into strategic revenue</span>
+                </div>
+                
+                <div className="tech-adv-item" style={{ gridColumn: '1 / -1', background: 'transparent', boxShadow: 'none', border: 'none', padding: '1.5rem 0 1rem 0' }}>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', margin: 0, fontSize: '1.1rem', color: '#0f172a' }}>
+                    <Activity size={24} color="#0ea5e9"/> For Strategic Capital & Investors
+                  </h4>
+                </div>
+                <div className="tech-adv-item">
+                  <div className="tech-adv-icon badge-blue"><Factory size={20} /></div>
+                  <span>Long-duration assets backed by industrial feedstock</span>
+                </div>
+                <div className="tech-adv-item">
+                  <div className="tech-adv-icon badge-blue"><ShieldCheck size={20} /></div>
+                  <span>Access to critical minerals without geological risk</span>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
       <PositioningSection
         title="We partner selectively. We deploy at scale."

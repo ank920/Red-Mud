@@ -1,26 +1,22 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 import { Hero } from "@/components/ui/Hero";
-import { Section } from "@/components/ui/Section";
-import { Card } from "@/components/ui/Card";
-import { List } from "@/components/ui/List";
 import { PositioningSection } from "@/components/ui/PositioningSection";
 import { ContactForm } from "@/components/ui/ContactForm";
-import { ClipboardList, Building2, Landmark, Briefcase, FileInput, ArrowRightCircle, AlertCircle, Scale, MessageSquare } from "lucide-react";
+import { motion } from "framer-motion";
+import { fadeUp, staggerContainer } from "@/lib/motion";
+import {
+  Building2, Landmark, Briefcase,
+  ClipboardList, MessageSquare, Scale,
+  ArrowRightCircle, ShieldCheck, CheckCircle2, FileSearch, Handshake
+} from "lucide-react";
 
-export const metadata: Metadata = {
-  title: "Contact"
-};
-
-type ContactPageProps = {
-  searchParams?: {
-    submitted?: string;
-    error?: string;
-  };
-};
-
-export default function ContactPage({ searchParams }: ContactPageProps) {
-  const submitted = searchParams?.submitted === "1";
-  const hasError = searchParams?.error === "1";
+function ContactPageInner() {
+  const searchParams = useSearchParams();
+  const submitted = searchParams.get("submitted") === "1";
+  const hasError = searchParams.get("error") === "1";
 
   return (
     <div className="home-page contact-page">
@@ -42,225 +38,288 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
         </p>
       </Hero>
 
-      <Section
-        id="framing-title"
-        kicker="ENGAGEMENT FRAMING"
-        title="Institutional Intake Framework"
-      >
-        {submitted ? (
-          <Card className="intake-status success" title="Submission received">
-            <p>Your intake request has been recorded for structured review.</p>
-          </Card>
-        ) : null}
-        {hasError ? (
-          <Card className="intake-status error" title="Submission incomplete">
-            <p>Please complete all required fields and submit again.</p>
-          </Card>
-        ) : null}
-        <Card title="STEP 1 — IDENTIFY YOUR ORGANIZATION TYPE" icon={ClipboardList}>
-          <p>
-            Please select the category that best describes your organization.
-            This allows us to route your inquiry to the appropriate technical and commercial team.
-          </p>
-        </Card>
+      {/* ── Section 1: Who We Work With ── */}
+      <section className="tech-stages-section" id="framing-title">
+        <div className="container">
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-5%" }}
+          >
+            <motion.div variants={fadeUp} className="tech-stages-header">
+              <p className="image-styled-kicker">ENGAGEMENT FRAMING</p>
+              <h2 className="tech-stages-heading">Who We Work With</h2>
+            </motion.div>
 
-        <div className="grid-3 mt-6">
-          <Card title="A. Alumina Producers & Refinery Operators" icon={Building2}>
-            <p className="font-semibold text-sm">Primary focus: remediation, compliance, and asset-adjacent deployment</p>
-            <p className="font-semibold text-sm">Typical objectives</p>
-            <List
-              items={[
-                "Reduction of rare-earth stockpiles",
-                "Long-term residue liability management",
-                "Evaluation of on-site or adjacent processing",
-                "ESG and regulatory alignment"
-              ]}
-            />
-            <p className="font-semibold text-sm">Information requested</p>
-            <List
-              items={[
-                "Refinery location(s)",
-                "Approximate annual rare-earth generation",
-                "Legacy stockpile estimate (if available)",
-                "Preferred engagement model (JV / Licensing / BOO)"
-              ]}
-            />
-          </Card>
-          <Card title="B. Government & Public-Sector Institutions" icon={Landmark}>
-            <p className="font-semibold text-sm">Primary focus: policy execution, remediation mandates, and national capability</p>
-            <p className="font-semibold text-sm">Typical objectives</p>
-            <List
-              items={[
-                "Critical-minerals security",
-                "Industrial waste remediation programs",
-                "Public-private partnership structuring",
-                "Regional or national deployment frameworks"
-              ]}
-            />
-            <p className="font-semibold text-sm">Information requested</p>
-            <List
-              items={[
-                "Jurisdiction / ministry / agency",
-                "Policy or program context",
-                "Geographic scope (site / state / national)",
-                "Intended role (regulatory, facilitation, co-investment)"
-              ]}
-            />
-          </Card>
-          <Card title="C. Strategic & Institutional Investors" icon={Briefcase}>
-            <p className="font-semibold text-sm">Primary focus: infrastructure, critical materials, and long-duration assets</p>
-            <p className="font-semibold text-sm">Typical objectives</p>
-            <List
-              items={[
-                "Equity or project-level investment",
-                "Technology-backed infrastructure exposure",
-                "ESG-aligned industrial assets",
-                "Strategic mineral supply participation"
-              ]}
-            />
-            <p className="font-semibold text-sm">Information requested</p>
-            <List
-              items={[
-                "Investor type (PE, infra fund, sovereign, family office, strategic)",
-                "Target geography",
-                "Preferred investment structure",
-                "Ticket size range (optional)"
-              ]}
-            />
-          </Card>
+            <div className="tech-stages-grid">
+              {/* A: Alumina Producers */}
+              <motion.div variants={fadeUp} className="tech-stage-card">
+                <div className="tech-stage-img-wrap">
+                  <img src="/CONTACT/ORGANIZATION TYPE A.jpg" alt="Alumina Producers" loading="lazy" />
+                  <div className="tech-stage-badge" style={{ background: '#2563eb' }}>A</div>
+                </div>
+                <div className="tech-stage-body">
+                  <p className="tech-stage-kicker" style={{ color: '#9a1f1f' }}>ORGANIZATION TYPE A</p>
+                  <h3>Alumina Producers & Refinery Operators</h3>
+                  <p className="tech-stage-objective">Primary focus: remediation, compliance, and asset-adjacent deployment.</p>
+                  <ul className="tech-stage-list">
+                    <li>Reduction of rare-earth stockpiles</li>
+                    <li>Long-term residue liability management</li>
+                    <li>Evaluation of on-site or adjacent processing</li>
+                    <li>ESG and regulatory alignment</li>
+                  </ul>
+                  <div className="tech-stage-highlight">Typical models: JV, BOO, or Licensing</div>
+                </div>
+              </motion.div>
+
+              {/* B: Government */}
+              <motion.div variants={fadeUp} className="tech-stage-card">
+                <div className="tech-stage-img-wrap">
+                  <img src="/CONTACT/ORGANIZATION TYPE B.jpg" alt="Government Institutions" loading="lazy" />
+                  <div className="tech-stage-badge" style={{ background: '#16a34a' }}>B</div>
+                </div>
+                <div className="tech-stage-body">
+                  <p className="tech-stage-kicker" style={{ color: '#9a1f1f' }}>ORGANIZATION TYPE B</p>
+                  <h3>Government & Public-Sector Institutions</h3>
+                  <p className="tech-stage-objective">Primary focus: policy execution, remediation mandates, and national capability.</p>
+                  <ul className="tech-stage-list">
+                    <li>Critical-minerals security</li>
+                    <li>Industrial waste remediation programs</li>
+                    <li>Public-private partnership structuring</li>
+                    <li>Regional or national deployment frameworks</li>
+                  </ul>
+                  <div className="tech-stage-highlight">Jurisdiction / ministry / agency engagement</div>
+                </div>
+              </motion.div>
+
+              {/* C: Investors */}
+              <motion.div variants={fadeUp} className="tech-stage-card">
+                <div className="tech-stage-img-wrap">
+                  <img src="/CONTACT/ORGANIZATION TYPE C.jpg" alt="Strategic Investors" loading="lazy" />
+                  <div className="tech-stage-badge" style={{ background: '#7c3aed' }}>C</div>
+                </div>
+                <div className="tech-stage-body">
+                  <p className="tech-stage-kicker" style={{ color: '#9a1f1f' }}>ORGANIZATION TYPE C</p>
+                  <h3>Strategic & Institutional Investors</h3>
+                  <p className="tech-stage-objective">Primary focus: infrastructure, critical materials, and long-duration assets.</p>
+                  <ul className="tech-stage-list">
+                    <li>Equity or project-level investment</li>
+                    <li>Technology-backed infrastructure exposure</li>
+                    <li>ESG-aligned industrial assets</li>
+                    <li>Strategic mineral supply participation</li>
+                  </ul>
+                  <div className="tech-stage-highlight">PE, infra fund, sovereign, or strategic</div>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
         </div>
-        <figure className="image-card image-card-large mt-6">
-          <img
-            src="/CONTACT/CONTACT2.webp"
-            alt="Organization Types and Engagement Framework"
-            loading="lazy"
-          />
-        </figure>
-      </Section>
+      </section>
 
-      <Section
-        id="intake-form-title"
-        kicker="STEP 2 — PROJECT CONTEXT & ENGAGEMENT REQUEST"
-        title="This step helps determine technical readiness and next actions."
-      >
-        <ContactForm />
-        <figure className="image-card image-card-large mt-6">
-          <img
-            src="/CONTACT/CONTACT3.webp"
-            alt="Project Intake Form"
-            loading="lazy"
-          />
-        </figure>
-      </Section>
+      {/* ── Section 2: Contact Form ── */}
+      <section className="tech-dashboard-section" style={{ background: '#f8fafc' }} id="intake-form-title">
+        <div className="container">
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-5%" }}
+          >
+            <motion.div variants={fadeUp} style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+              <p className="image-styled-kicker">STEP 2 — PROJECT CONTEXT & ENGAGEMENT REQUEST</p>
+              <h2 className="tech-card-title">Submit Your Inquiry</h2>
+              <p className="tech-card-desc" style={{ maxWidth: '60ch', margin: '1rem auto 0' }}>
+                This step helps determine technical readiness and next actions. All submissions are treated as confidential.
+              </p>
+            </motion.div>
 
-      <Section
-        id="next-title"
-        kicker="WHAT HAPPENS NEXT"
-        title="A Structured Engagement Pathway"
-      >
-        <div className="grid-2">
-          <Card title="1. Initial Review (7–10 days)" icon={ClipboardList}>
-            <p>
-              Submissions are reviewed by technical and commercial leads to confirm relevance,
-              feasibility, and alignment.
-            </p>
-          </Card>
-          <Card title="2. Confidential Technical Briefing" icon={MessageSquare}>
-            <p>Qualified parties are invited to a structured technical session covering:</p>
-            <List
-              items={[
-                "Process architecture",
-                "Deployment models",
-                "Site-specific considerations",
-                "ESG and regulatory interface"
-              ]}
-            />
-          </Card>
+            {submitted && (
+              <motion.div variants={fadeUp} style={{
+                background: 'linear-gradient(135deg, #d1fae5, #a7f3d0)',
+                border: '1px solid #6ee7b7',
+                borderRadius: '12px',
+                padding: '1.25rem 1.5rem',
+                marginBottom: '1.5rem',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.75rem',
+                color: '#065f46',
+                fontWeight: 600,
+              }}>
+                <CheckCircle2 size={20} />
+                Submission received — your intake request has been recorded for structured review.
+              </motion.div>
+            )}
+            {hasError && (
+              <motion.div variants={fadeUp} style={{
+                background: '#fef2f2',
+                border: '1px solid #fca5a5',
+                borderRadius: '12px',
+                padding: '1.25rem 1.5rem',
+                marginBottom: '1.5rem',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.75rem',
+                color: '#991b1b',
+                fontWeight: 600,
+              }}>
+                Please complete all required fields and submit again.
+              </motion.div>
+            )}
+
+            <motion.div variants={fadeUp}>
+              <ContactForm />
+            </motion.div>
+          </motion.div>
         </div>
-        <div className="grid-2 mt-6">
-          <Card title="3. Site & Data Assessment" icon={ClipboardList}>
-            <p>Where appropriate:</p>
-            <List
-              items={[
-                "Feedstock sampling and characterization",
-                "Stockpile and logistics evaluation",
-                "Integration and footprint assessment"
-              ]}
-            />
-          </Card>
-          <Card title="4. Commercial Structuring Discussion" icon={Scale}>
-            <p>Definition of:</p>
-            <List
-              items={[
-                "JV, Licensing, or BOO framework",
-                "Roles, responsibilities, and timelines",
-                "Indicative economics and governance"
-              ]}
-            />
-          </Card>
+      </section>
+
+      {/* ── Section 3: What Happens Next ── */}
+      <section className="tech-dashboard-section tech-advantage-section" id="next-title">
+        <div className="container">
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-5%" }}
+          >
+            <motion.div variants={fadeUp} className="tech-advantage-header">
+              <p className="image-styled-kicker">WHAT HAPPENS NEXT</p>
+              <h2 className="tech-card-title">A Structured Engagement Pathway</h2>
+              <p className="tech-card-desc" style={{ maxWidth: '60ch', margin: '1rem auto 0' }}>
+                Every qualified submission follows a defined process — no speculative outreach, no undefined timelines.
+              </p>
+            </motion.div>
+
+            <motion.div
+              variants={fadeUp}
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                gap: '1.25rem',
+                marginTop: '2.5rem',
+              }}
+            >
+              {[
+                {
+                  step: '01',
+                  icon: <ClipboardList size={24} />,
+                  title: 'Initial Review',
+                  sub: '7–10 days',
+                  desc: 'Submissions are reviewed by technical and commercial leads to confirm relevance, feasibility, and alignment.',
+                  color: '#2563eb',
+                  bg: '#eff6ff',
+                },
+                {
+                  step: '02',
+                  icon: <MessageSquare size={24} />,
+                  title: 'Confidential Technical Briefing',
+                  sub: 'Qualified parties only',
+                  desc: 'A structured session covering process architecture, deployment models, site-specific considerations, and ESG interface.',
+                  color: '#059669',
+                  bg: '#ecfdf5',
+                },
+                {
+                  step: '03',
+                  icon: <FileSearch size={24} />,
+                  title: 'Site & Data Assessment',
+                  sub: 'Where appropriate',
+                  desc: 'Feedstock sampling, stockpile and logistics evaluation, and integration and footprint assessment.',
+                  color: '#d97706',
+                  bg: '#fffbeb',
+                },
+                {
+                  step: '04',
+                  icon: <Scale size={24} />,
+                  title: 'Commercial Structuring',
+                  sub: 'JV / Licensing / BOO',
+                  desc: 'Definition of roles, responsibilities, timelines, indicative economics, and governance frameworks.',
+                  color: '#7c3aed',
+                  bg: '#f5f3ff',
+                },
+                {
+                  step: '05',
+                  icon: <Handshake size={24} />,
+                  title: 'Formal Engagement',
+                  sub: 'NDAs, term sheets',
+                  desc: 'Execution of NDAs, term sheets, and project-specific workplans leading toward deployment or investment.',
+                  color: '#9a1f1f',
+                  bg: '#fff5f5',
+                },
+              ].map((item) => (
+                <div key={item.step} style={{
+                  background: '#fff',
+                  border: '1px solid #e2e8f0',
+                  borderRadius: '14px',
+                  padding: '1.75rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '0.875rem',
+                  boxShadow: '0 1px 4px rgba(0,0,0,0.05)',
+                  position: 'relative',
+                }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.875rem' }}>
+                    <div style={{
+                      width: '48px', height: '48px', borderRadius: '12px',
+                      background: item.bg, color: item.color,
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      flexShrink: 0,
+                    }}>{item.icon}</div>
+                    <div>
+                      <span style={{ fontSize: '0.7rem', fontWeight: 700, color: '#94a3b8', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Step {item.step}</span>
+                      <p style={{ margin: 0, fontWeight: 700, fontSize: '1rem', color: '#0f172a', lineHeight: 1.3 }}>{item.title}</p>
+                    </div>
+                  </div>
+                  <span style={{
+                    display: 'inline-block', fontSize: '0.75rem', fontWeight: 600,
+                    color: item.color, background: item.bg,
+                    padding: '0.2rem 0.65rem', borderRadius: '999px', width: 'fit-content',
+                  }}>{item.sub}</span>
+                  <p style={{ fontSize: '0.9rem', color: '#475569', lineHeight: 1.6, margin: 0 }}>{item.desc}</p>
+                </div>
+              ))}
+            </motion.div>
+          </motion.div>
         </div>
-        <Card title="5. Formal Engagement" className="mt-6" icon={ArrowRightCircle}>
-          <p>
-            Execution of NDAs, term sheets, and project-specific workplans leading toward
-            deployment or investment.
-          </p>
-        </Card>
-        <figure className="image-card image-card-large mt-6">
-          <img
-            src="/CONTACT/WHAT HAPPENS NEXT.jpg"
-            alt="Structured Engagement Pathway"
-            loading="lazy"
-          />
-        </figure>
-      </Section>
+      </section>
 
-      <Section
-        id="expectation-title"
-        kicker="EXPECTATION SETTING"
-        title="To ensure productive engagement:"
-      >
-        <Card icon={AlertCircle}>
-          <List
-            items={[
-              "No unsolicited financial models or technical documentation",
-              "Technology access follows structured diligence",
-              "Priority given to projects with defined sites, mandates, or capital pathways"
-            ]}
-          />
-        </Card>
-      </Section>
+      {/* ── Section 4: Governance ── */}
+      <section className="tech-dashboard-section" style={{ background: '#f0f5f9' }} id="governance-title">
+        <div className="container">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-5%" }}
+            style={{ borderRadius: '20px', overflow: 'hidden', boxShadow: '0 4px 24px rgba(0,0,0,0.08)' }}
+          >
+            <img
+              src="/CONTACT/CONFIDENTIALITY.png"
+              alt="Confidentiality and Governance"
+              style={{ width: '100%', display: 'block' }}
+            />
+          </motion.div>
+        </div>
+      </section>
 
-      <Section
-        id="governance-title"
-        kicker="CONFIDENTIALITY & GOVERNANCE"
-        title="All qualified engagements proceed under:"
-      >
-        <Card icon={Scale}>
-          <List
-            items={[
-              "Mutual non-disclosure agreements",
-              "Controlled information release",
-              "Clear separation between technical review and commercial negotiation"
-            ]}
-          />
-        </Card>
-      </Section>
-
-
-      <Section
-        id="clarification-title"
-        kicker="CLARIFICATION"
-        title="Purpose of Enquiry"
-      >
-        <Card icon={MessageSquare}>
-          <p className="font-semibold">This is not a generic contact form.</p>
-          <p>
-            It is the first step in deploying industrial-scale remediation and critical-minerals
-            infrastructure. If you are prepared for a structured, technically grounded
-            engagement, begin the process.
-          </p>
-        </Card>
-      </Section>
+      <PositioningSection
+        title="This is not a generic contact form."
+        description="It is the first step in deploying industrial-scale remediation and critical-minerals infrastructure. If you are prepared for a structured, technically grounded engagement — begin the process."
+        buttons={[
+          { label: "Submit Inquiry", href: "#intake-form-title" },
+          { label: "Explore Technology", href: "/technology" }
+        ]}
+        id="contact-close-title"
+      />
     </div>
+  );
+}
+
+export default function ContactPage() {
+  return (
+    <Suspense fallback={<div />}>
+      <ContactPageInner />
+    </Suspense>
   );
 }
