@@ -44,7 +44,7 @@ export default function IndiaStrategyPage() {
             viewport={{ once: true, margin: "-5%" }}
           >
             <motion.div variants={fadeUp} className="tech-advantage-header">
-              <p className="image-styled-kicker">INDIA'S RARE EARTH REALITY</p>
+              <p className="image-styled-kicker">INDIA&apos;S RARE EARTH REALITY</p>
               <h2 className="tech-card-title">Scale, Concentration, and Risk</h2>
               <p className="tech-card-desc" style={{ maxWidth: '60ch', margin: '1rem auto 0' }}>India’s rare-earth challenge is not future-tense. It is already accumulated, geographically concentrated in states like Odisha, and policy-relevant today.</p>
             </motion.div>
@@ -61,7 +61,7 @@ export default function IndiaStrategyPage() {
                       <span style={{ fontSize: '0.8rem', color: '#64748b', fontWeight: 600, textTransform: 'uppercase' }}>Annual Generation</span>
                     </div>
                   </div>
-                  <p style={{ fontSize: '0.9rem', color: '#475569', margin: '0.5rem 0 0' }}>India's total rare earth production, with an ~8.7M t/year net accumulation into storage ponds.</p>
+                  <p style={{ fontSize: '0.9rem', color: '#475569', margin: '0.5rem 0 0' }}>India&apos;s total rare earth production, with an ~8.7M t/year net accumulation into storage ponds.</p>
                 </div>
                 <div style={{ padding: '2rem' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.5rem' }}>
@@ -109,7 +109,7 @@ export default function IndiaStrategyPage() {
             <div className="tech-split-content" style={{ paddingLeft: 'clamp(2rem, 4vw, 3.5rem)', paddingRight: 0 }}>
               <p className="image-styled-kicker">STRATEGIC MINERAL POTENTIAL</p>
               <h2 className="tech-card-title">Hiding in Plain Sight</h2>
-              <p className="tech-card-desc">At national throughput levels, India's stockpiles translate into a strategic materials opportunity for critical security — entirely without new mining.</p>
+              <p className="tech-card-desc">At national throughput levels, India&apos;s stockpiles translate into a strategic materials opportunity for critical security — entirely without new mining.</p>
 
               <div className="tech-chemistry-grid">
                 <div className="tech-chem-card">
@@ -154,7 +154,7 @@ export default function IndiaStrategyPage() {
           >
             <motion.div variants={fadeUp} className="tech-sustain-content">
               <p className="image-styled-kicker">POLICY ALIGNMENT</p>
-              <h2 className="tech-card-title">Built for India's National Missions</h2>
+              <h2 className="tech-card-title">Built for India&apos;s National Missions</h2>
               <p className="tech-card-desc">This technology enables domestic recovery from domestic waste, reducing exposure to geopolitically concentrated supply chains.</p>
 
               <div className="tech-sustain-pillars">

@@ -111,7 +111,7 @@ export default function TeamPage() {
               </p>
               <div style={{ paddingLeft: '1.5rem', borderLeft: '3px solid #ea580c', background: '#fff7ed', padding: '1.5rem', borderRadius: '0 8px 8px 0' }}>
                 <p style={{ margin: 0, fontStyle: 'italic', color: '#c2410c', fontWeight: 500 }}>
-                  "Technical leadership anchored by the Chief Technology Officer responsible for reactor design and hydrogen systems engineering."
+                  &ldquo;Technical leadership anchored by the Chief Technology Officer responsible for reactor design and hydrogen systems engineering.&rdquo;
                 </p>
               </div>
             </div>
@@ -195,7 +195,7 @@ export default function TeamPage() {
               </div>
               <div className="resume-quote-box">
                 <p className="resume-quote-text">
-                  "Pushing boundaries across critical minerals extraction and deep industrial decarbonization."
+                  &ldquo;Pushing boundaries across critical minerals extraction and deep industrial decarbonization.&rdquo;
                 </p>
               </div>
             </div>

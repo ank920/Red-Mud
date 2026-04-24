@@ -59,7 +59,7 @@ export function TeamGrid({ executives, advisors }: TeamGridProps) {
 
             {person.quote && (
               <div className="resume-quote-box">
-                 <p className="resume-quote-text">"{person.quote}"</p>
+                 <p className="resume-quote-text">&ldquo;{person.quote}&rdquo;</p>
               </div>
             )}
 
@@ -107,7 +107,7 @@ export function TeamGrid({ executives, advisors }: TeamGridProps) {
               )}
               {person.quote && (
                 <div className="resume-quote-box green" style={{ margin: 0 }}>
-                  <p className="resume-quote-text">"{person.quote}"</p>
+                  <p className="resume-quote-text">&ldquo;{person.quote}&rdquo;</p>
                 </div>
               )}
             </div>
