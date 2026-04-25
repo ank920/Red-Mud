@@ -55,10 +55,10 @@ export function VantaHero({
                     minHeight: 200,
                     minWidth: 200,
                     scale: 1.0,
-                    color1: 0xff5a1f, // Brighter earthy red for contrast
-                    color2: 0x110603, // Dark organic red-black background instead of pure black
-                    size: typeof window !== "undefined" && window.innerWidth < 768 ? 1.2 : 1.6, // Slightly denser cells
-                    speed: 1.2, // Balanced smooth speed
+                    color1: 0xE8662A, // Bright vivid red-mud orange
+                    color2: 0xA03318, // Medium red-mud (visible, warm brick)
+                    size: typeof window !== "undefined" && window.innerWidth < 768 ? 1.0 : 2.4,
+                    speed: 1.4,
                     distro: -1.0,
                 });
             } catch (e) {

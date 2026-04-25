@@ -1166,7 +1166,7 @@ button:disabled {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: #1c1917;
+  background: #7A2510;
 }
 
 /* Inside the media container */
@@ -4160,8 +4160,8 @@ button:disabled {
   inset: 0;
   z-index: 1;
   background:
-    radial-gradient(circle at 50% 24%, rgba(255, 255, 255, 0.08), transparent 20%),
-    linear-gradient(180deg, rgba(5, 4, 4, 0.18) 0%, rgba(5, 4, 4, 0.34) 34%, rgba(10, 6, 4, 0.8) 100%);
+    radial-gradient(circle at 50% 24%, rgba(232, 102, 42, 0.18), transparent 50%),
+    linear-gradient(180deg, rgba(10, 3, 1, 0.04) 0%, rgba(10, 3, 1, 0.10) 50%, rgba(15, 5, 2, 0.22) 100%);
   pointer-events: none;
 }
 
