@@ -866,6 +866,17 @@ button:disabled {
 
   /* Arrow indicator — appears on the right on hover */
   .nav-list a::after {
+    /* Reset desktop underline properties so they don't bleed into mobile */
+    position: static;
+    height: auto;
+    width: auto;
+    background: none;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    border-radius: 0;
+    transform-origin: initial;
+    /* Mobile arrow */
     content: '→';
     font-size: 1rem;
     opacity: 0;
@@ -4990,14 +5001,17 @@ button:disabled {
     width: 100%;
     min-height: 280px;
     position: relative;
+    /* Always render image AFTER text on mobile regardless of DOM order */
+    order: 2;
+  }
+  .tech-split-content {
+    padding: 2rem;
+    order: 1;
   }
   .tech-split-img {
     position: relative;
     width: 100%;
     height: 280px;
-  }
-  .tech-split-content {
-    padding: 2rem;
   }
 }
 
@@ -5537,11 +5551,11 @@ button:disabled {
   h3 { font-size: 1.1rem; }
 
   .section {
-    padding: 2.5rem 0;
+    padding: 1.5rem 0;
   }
 
   .content-section {
-    padding: 2.5rem 0;
+    padding: 1.5rem 0;
   }
 
   /* Team stats bar */
@@ -5577,9 +5591,12 @@ button:disabled {
     flex-wrap: wrap;
   }
 
-  /* Team page hero section */
+  /* First section after hero needs nav clearance; subsequent sections do not */
+  .tech-dashboard-section:first-of-type {
+    padding-top: 5rem;
+  }
   .tech-dashboard-section {
-    padding-top: 6rem !important;
+    padding: 2rem 0;
   }
 
   /* Dashboard quick-stat bars */
@@ -5640,7 +5657,7 @@ button:disabled {
 
   /* Positioning section */
   .positioning-section {
-    padding: 3.5rem 0;
+    padding: 2rem 0;
   }
   .positioning-section h2 {
     font-size: clamp(1.8rem, 5vw, 2.5rem);
@@ -5856,10 +5873,10 @@ button:disabled {
 /* 4. Dashboard section padding on mobile */
 @media (max-width: 640px) {
   .tech-dashboard-section {
-    padding: 2rem 0;
+    padding: 1.5rem 0;
   }
   .tech-stages-section {
-    padding: 2rem 0;
+    padding: 1.5rem 0;
   }
   .tech-card-title {
     font-size: clamp(1.4rem, 5vw, 2rem);
@@ -5869,10 +5886,10 @@ button:disabled {
     max-width: 100%;
   }
   .tech-advantage-header {
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
   }
   .tech-stages-header {
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
   }
 }
 
@@ -6148,4 +6165,162 @@ button:disabled {
   }
 }
 
+/* ==========================================================================
+   MOBILE-ONLY FIXES
+   ========================================================================== */
 
+/* ── Nav: always show a background on mobile so it doesn't bleed into hero ── */
+@media (max-width: 900px) {
+  /* Dark hero pages */
+  .site-header.dark-nav:not(.menu-open) {
+    background: rgba(8, 5, 2, 0.82);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  }
+  /* Light pages (e.g. team) */
+  .site-header.light-nav:not(.scrolled):not(.menu-open) {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(12, 19, 32, 0.06);
+  }
+  /* Force nav text back to correct colours against the now-opaque bg */
+  .site-header.dark-nav:not(.menu-open) .brand-earth,
+  .site-header.dark-nav:not(.menu-open) .nav-list a,
+  .site-header.dark-nav:not(.menu-open) .menu-toggle {
+    color: rgba(255, 255, 255, 0.88);
+  }
+}
+
+@media (max-width: 768px) {
+  /* ── Hero: push content below the fixed nav bar ── */
+  .page-hero-content {
+    padding-top: 6rem;
+    min-height: 56vh;
+  }
+
+  /* VantaHero: offset flex-centre so title clears the nav */
+  .vanta-media-container {
+    padding-top: 4rem;   /* shifts the flex centre-point down */
+  }
+
+  /* ── Home splits: prevent two images appearing back-to-back ──
+     Problem section: text → image (DOM order, correct)
+     Solution section DOM order is image → text, which on mobile
+     puts problem-image immediately above solution-image.
+     Force the solution image to render AFTER its text. */
+  .home-split-solution > figure {
+    order: 2;
+  }
+  .home-split-solution > .image-styled-content {
+    order: 1;
+  }
+
+  /* ── Home media frames: auto height on narrow screens ── */
+  .home-media-frame,
+  .home-media-frame-wide {
+    min-height: 260px;
+  }
+
+  /* ── Home split gap: tighten so sections feel intentionally spaced ── */
+  .home-split {
+    gap: 1.5rem;
+  }
+
+  /* ── Metric strip: 2-column on small phones ── */
+  .metric-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .metric-strip-item {
+    border-bottom: 1px solid var(--line);
+  }
+  .metric-strip-item:nth-child(2n) {
+    border-right: none;
+  }
+  .metric-strip-item:nth-last-child(-n+2) {
+    border-bottom: none;
+  }
+}
+
+
+
+/* ============================================================
+   MOBILE SPACING REDUCTION — reduce large gaps between/within sections
+   ============================================================ */
+@media (max-width: 768px) {
+  /* Inner section header margins */
+  .tech-advantage-header {
+    margin-bottom: 1.5rem;
+  }
+  .tech-advantage-grid {
+    gap: 1.5rem;
+  }
+
+  /* Split card internal padding */
+  .tech-split-content {
+    padding: 1.5rem !important;
+  }
+  .tech-split-card {
+    gap: 0;
+  }
+
+  /* Sustainability/pillar grid */
+  .tech-sustain-pillars {
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+  }
+  .tech-sustainability-grid {
+    gap: 1.5rem !important;
+  }
+
+  /* Chemistry grid */
+  .tech-chemistry-grid {
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  /* Tag row */
+  .tech-tag-row {
+    margin-top: 1rem;
+  }
+
+  /* Resume cards */
+  .resume-card {
+    padding: 1.25rem;
+  }
+  .resume-grid {
+    gap: 1rem;
+  }
+
+  /* Positioning / CTA section */
+  .positioning-section {
+    padding: 2rem 1.25rem;
+  }
+  .positioning-section h2 {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+
+  /* Content sections */
+  .content-section {
+    padding: 1.5rem 0;
+  }
+
+  /* Advantage cards list */
+  .tech-advantage-cards {
+    gap: 0.6rem;
+  }
+  .tech-adv-item {
+    padding: 0.75rem 1rem;
+  }
+
+  /* Tech stages */
+  .tech-stage-card {
+    padding: 1.25rem;
+  }
+
+  /* Metric strip spacing */
+  .metric-strip {
+    margin: 1rem 0;
+  }
+}

@@ -122,7 +122,7 @@ export default function HomePage() {
           </div>
 
           {/* 3 output cards */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.25rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: '1.25rem' }}>
             {/* Card 1 - Critical Materials */}
             <div style={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
               <div style={{ height: '6px', background: 'linear-gradient(90deg, #2563eb, #60a5fa)' }} />
