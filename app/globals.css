@@ -5050,6 +5050,7 @@ button:disabled {
   position: relative;
   padding: 0.5rem 0.4rem 0.6rem;
   cursor: default;
+  overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -5077,13 +5078,15 @@ button:disabled {
 }
 
 .elem-name {
-  font-size: 0.6rem;
+  font-size: 0.5rem;
   font-weight: 700;
   color: var(--elem-color, #334155);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.01em;
   text-align: center;
   line-height: 1.2;
+  width: 100%;
+  word-break: break-word;
 }
 
 .elem-sub {

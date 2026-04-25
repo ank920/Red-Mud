@@ -1,6 +1,5 @@
 import { Container } from "@/components/ui/Container";
 import { TeamGrid } from "./TeamGrid";
-import { Hero } from "@/components/ui/Hero";
 import Link from 'next/link';
 
 const executives = [
@@ -9,42 +8,28 @@ const executives = [
     role: "Chief Executive Officer",
     tags: ["Hydrogen Systems", "Scaling Ventures", "Industrial Infrastructure"],
     quote: "Developing scalable hydrogen and plasma-based energy systems for industrial decarbonisation.",
-    background: "Entrepreneur and technology founder developing scalable hydrogen and plasma-based energy systems for industrial decarbonisation. Brings 25+ years of experience building and scaling ventures across technology, financial platforms and industrial infrastructure. Previously senior roles at Barclays Global Investors, Wells Fargo and Pacific Gas & Electric. M.Sc Computer Science, University of South Carolina; BE Electrical Engineering, IIT Roorkee.",
+    background: "Entrepreneur and technology founder developing scalable plasma-based energy systems for industrial decarbonisation. Brings 25+ years of experience building and scaling ventures across technology, financial platforms and industrial infrastructure. Previously senior roles at Barclays Global Investors, Wells Fargo and Pacific Gas & Electric. M.Sc Computer Science, University of South Carolina; BE Electrical Engineering, IIT Roorkee.",
   },
   {
     name: "Vandit Verma",
     role: "President – Infrastructure & Energy Platforms",
     tags: ["Cross-Border Structuring", "Strategic Capital", "Waste-to-Energy"],
     quote: "Leads global infrastructure development and commercialisation of advanced energy platforms.",
-    background: "Leads global infrastructure development and commercialisation of advanced energy platforms. Cross-border project structuring, strategic capital partnerships. Experience in hydrogen and low-carbon fuel systems, rare earth extraction and waste-to-energy infrastructure across North America, Europe and emerging markets. B.Eng Mechanical Engineering, Ryerson University, Canada.",
+    background: "Leads global infrastructure development and commercialisation of advanced energy platforms. Cross-border project structuring, strategic capital partnerships. Experience in rare earth extraction and waste-to-energy infrastructure across North America, Europe and emerging markets. B.Eng Mechanical Engineering, Ryerson University, Canada.",
   },
   {
     name: "Igor Kuntzevitsky",
     role: "Chief Technology Officer",
     tags: ["Reactor Design", "IP Development", "Patented Pathways"],
     quote: "Inventor of multiple granted U.S. patents covering hydrogen production pathways and critical mineral recovery systems.",
-    background: "Leads reactor architecture, hydrogen systems engineering and IP development. Inventor of multiple granted U.S. patents covering hydrogen production pathways and critical mineral recovery systems (hydrocarbon gas pathways, red mud processing). Expertise spans matrix reactor systems, controlled partial oxidation and integrated hydrogen purification. Masters in Mechanical Engineering, Uzbekistan.",
-  },
-  {
-    name: "Harsha Jayaram",
-    role: "Systems Integration Officer",
-    tags: ["Project Development", "Carbon Capture", "Techno-Commercial"],
-    quote: "30+ year energy industry executive with leadership roles across hydrogen, industrial gases, and renewable infrastructure.",
-    background: "30+ year energy industry executive with leadership roles across hydrogen, industrial gases, carbon capture and renewable infrastructure. Former senior executive at Praxair/Linde, Ohmium, Tecnicas Reunidas and Waaree. Specialist in techno-commercial validation, hydrogen project structuring and large-scale energy infrastructure deployment.; BE Chemical Engineering, University of Mumbai.",
-  },
-  {
-    name: "J. Gupta",
-    role: "Head of R&D – India",
-    tags: ["Electrochemical Modeling", "Reactor Optimisation", "Catalysts"],
-    quote: "Leads hydrogen technology validation, reactor optimisation and scale-up for advanced energy platforms.",
-    background: "Leads hydrogen technology validation, reactor optimisation and scale-up for GigaCore’s advanced energy platforms. 14+ years at leading energy companies across hydrogen, CCUS, catalysts and refinery-scale systems. Specialist in electrochemical modeling, advanced materials and techno-economic evaluation of hydrogen systems. PhD, IIT, Delhi.",
+    background: "Leads reactor architecture, systems engineering and IP development. Inventor of multiple granted U.S. patents covering production pathways and critical mineral recovery systems (hydrocarbon gas pathways, red mud processing). Expertise spans matrix reactor systems, controlled partial oxidation and integrated gas purification. Masters in Mechanical Engineering, Uzbekistan.",
   },
   {
     name: "Prashanth Shetty",
     role: "Business Development",
     tags: ["Institutional Engagement", "Go-To-Market", "Enterprise Platforms"],
     quote: "Driving institutional investor engagement, commercialisation strategy and strategic partnerships.",
-    background: "Leads business development across GigaCore’s hydrogen and energy infrastructure platform, driving institutional investor engagement, commercialisation strategy and strategic partnerships. Former executive leader at Verdigris, EMC and SAP with experience spanning global go-to-market strategy and enterprise technology platforms. MBA, The Wharton School; MS Engineering, Stanford University.",
+    background: "Leads business development across the energy infrastructure platform, driving institutional investor engagement, commercialisation strategy and strategic partnerships. Former executive leader at Verdigris, EMC and SAP with experience spanning global go-to-market strategy and enterprise technology platforms. MBA, The Wharton School; MS Engineering, Stanford University.",
   },
   {
     name: "Ajeet Saran",
@@ -71,13 +56,6 @@ const advisors = [
     background: "Upal Basu is a General Partner and Member at NGP Capital, managing over $2 billion globally. Leads North America office and global software investments under a “Convergence” thesis focused on robotics, industrial systems, and dual-use technologies. 25+ years experience, led 20+ investments with 10 successful exits. Stanford M.S. in Engineering and Harvard MBA, bringing deep capital markets expertise to advanced industrial technology strategy.",
   },
   {
-    name: "Neeraj Agarwal",
-    role: "Infrastructure & Operations Expert",
-    tags: ["Energy & Oil", "Lender’s Engineer", "Independent Director"],
-    quote: "Led large-scale projects ranging from $200M to over $1B.",
-    background: "Senior project and operations leader with over 25 years of experience across energy, oil & gas, and infrastructure in India and the Middle East. Former COO (UAE) and Chief General Manager at Engineers India Limited. Led large-scale projects ranging from $200M to over $1B and served as Lender’s Independent Engineer on $10B+ projects. B.Tech IIT Roorkee and Certified Independent Director (IICA).",
-  },
-  {
     name: "Pranay Kothari",
     role: "Global Industrial Operations",
     tags: ["Supply Chain Structuring", "Plant Execution", "International Expansion"],
@@ -89,7 +67,7 @@ const advisors = [
     role: "Governance & Entrepreneurship Advisor",
     tags: ["NGO Leadership", "Business Incubation", "Economic Empowerment"],
     quote: "Awarded internationally as Best Entrepreneurship Educator by NFTE USA. Over 35 years of teaching experience.",
-    background: "Director North of I Create India, an NGO promoting entrepreneurship among youth, marginalized sections of society, and Indian Army Veterans. Spearheaded eight Business Incubation Centres at different locations of the Army and mentored veterans to start businesses. Awarded internationally as Best Entrepreneurship Educator by NFTE USA. Over 35 years of teaching experience, superannuated as Vice-Principal of Kanoria Girls College. Strong believer in economic empowerment through entrepreneurship.",
+    background: "Governance and entrepreneurship expert with 35+ years of institutional leadership, now focused on building sustainable ecosystems around rare earth recovery and critical mineral value chains. Director North of I Create India, promoting entrepreneurship and economic empowerment in underserved communities. Spearheaded eight Business Incubation Centres and mentored veterans into enterprise. Advocates for rare earth community development through structured incubation and knowledge transfer. Recognised internationally as Best Entrepreneurship Educator by NFTE USA. Superannuated as Vice-Principal of Kanoria Girls College.",
   }
 ];
 
