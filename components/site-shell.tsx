@@ -10,6 +10,7 @@ import { Menu, X } from "lucide-react";
 const navigation = [
   { href: "/", label: "Home" },
   { href: "/technology", label: "Technology" },
+  { href: "/economics", label: "Economics" },
   { href: "/outputs", label: "Outputs" },
   { href: "/esg", label: "ESG" },
   { href: "/india-strategy", label: "India Strategy" },

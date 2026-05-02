@@ -240,10 +240,10 @@ export default function HomePage() {
             </article>
             <article className="strategic-marquee-card">
               <figure className="strategic-marquee-img">
-                <img src="/home/Strategic Independence.png" alt="Strategic independence" />
+                <img src="/home/Strategic Independence.jpg" alt="Strategic independence" />
               </figure>
               <h3 className="strategic-marquee-title">Strategic Independence</h3>
-              <p className="strategic-marquee-copy">Decouples North American supply chains from geopolitically concentrated rare earth producers without new extraction.</p>
+              <p className="strategic-marquee-copy">Enables resilient, globally distributed supply chains by unlocking alternative sources of critical minerals—without additional extraction.</p>
             </article>
             {/* Duplicate set for seamless loop */}
             <article className="strategic-marquee-card" aria-hidden="true">
@@ -269,10 +269,10 @@ export default function HomePage() {
             </article>
             <article className="strategic-marquee-card" aria-hidden="true">
               <figure className="strategic-marquee-img">
-                <img src="/home/Strategic Independence.png" alt="" />
+                <img src="/home/Strategic Independence.jpg" alt="" />
               </figure>
               <h3 className="strategic-marquee-title">Strategic Independence</h3>
-              <p className="strategic-marquee-copy">Decouples North American supply chains from geopolitically concentrated rare earth producers without new extraction.</p>
+              <p className="strategic-marquee-copy">Enables resilient, globally distributed supply chains by unlocking alternative sources of critical minerals without additional extraction.</p>
             </article>
           </div>
         </div>

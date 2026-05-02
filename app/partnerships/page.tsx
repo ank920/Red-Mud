@@ -1,6 +1,5 @@
 "use client";
 
-import type { Metadata } from "next";
 import { Hero } from "@/components/ui/Hero";
 import { PositioningSection } from "@/components/ui/PositioningSection";
 import { motion } from "framer-motion";
@@ -9,6 +8,32 @@ import {
   Handshake, FileBadge, Factory, TrendingUp, 
   ShieldCheck, Users, Activity, FileText, Settings, Lightbulb, Building2
 } from "lucide-react";
+
+function PartnerCard({ name, domain, desc }: { name: string; domain: string; desc: string }) {
+  return (
+    <div className="partner-card">
+      <div className="partner-logo-wrap">
+        <img
+          src={`https://logo.clearbit.com/${domain}`}
+          alt={`${name} logo`}
+          className="partner-logo"
+          loading="lazy"
+          onError={(e) => {
+            const img = e.currentTarget;
+            img.style.display = "none";
+            const fb = img.nextElementSibling as HTMLElement | null;
+            if (fb) fb.style.display = "flex";
+          }}
+        />
+        <span className="partner-logo-fallback">
+          {name.split(" ").slice(0, 2).map((w) => w[0]).join("")}
+        </span>
+      </div>
+      <p className="partner-name">{name}</p>
+      <p className="partner-desc">{desc}</p>
+    </div>
+  );
+}
 
 export default function PartnershipsPage() {
   return (
@@ -239,6 +264,67 @@ export default function PartnershipsPage() {
                 <div className="tech-adv-item">
                   <div className="tech-adv-icon badge-blue"><ShieldCheck size={20} /></div>
                   <span>Access to critical minerals without geological risk</span>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── Section 5: Strategic Industry Partners ── */}
+      <section className="partners-section" id="strategic-partners">
+        <div className="container">
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-5%" }}
+          >
+            <motion.div variants={fadeUp} className="partners-heading-block">
+              <p className="image-styled-kicker">TARGET PARTNERS</p>
+              <h2 className="partners-main-title">Strategic Industry Partners</h2>
+              <p className="partners-subtitle">
+                We engage with leading alumina producers and critical mineral companies across India
+                and global markets — organisations with the feedstock scale, operational
+                infrastructure, and strategic mandate to benefit from integrated bauxite residue
+                recovery.
+              </p>
+            </motion.div>
+
+            <div className="partners-regions">
+              {/* India */}
+              <motion.div variants={fadeUp} className="partners-region">
+                <div className="partners-region-label">
+                  <span className="partners-region-dot" />
+                  India
+                </div>
+                <div className="partners-logos">
+                  {[
+                    { name: "Hindalco Industries",             domain: "hindalco.com",        desc: "Aluminium & Copper" },
+                    { name: "Vedanta Limited",                  domain: "vedanta.com",          desc: "Diversified Resources" },
+                    { name: "National Aluminium Company",       domain: "nalcoindia.com",       desc: "Govt. of India Enterprise" },
+                  ].map((p) => (
+                    <PartnerCard key={p.domain} {...p} />
+                  ))}
+                </div>
+              </motion.div>
+
+              <div className="partners-divider" />
+
+              {/* Global */}
+              <motion.div variants={fadeUp} className="partners-region">
+                <div className="partners-region-label">
+                  <span className="partners-region-dot" />
+                  Global
+                </div>
+                <div className="partners-logos">
+                  {[
+                    { name: "Rio Tinto",         domain: "riotinto.com",         desc: "Global Mining Leader" },
+                    { name: "Lynas Rare Earths", domain: "lynasrareearths.com",  desc: "Rare Earth Producer"  },
+                    { name: "Alcoa Corporation", domain: "alcoa.com",            desc: "Aluminium & Bauxite"  },
+                  ].map((p) => (
+                    <PartnerCard key={p.domain} {...p} />
+                  ))}
                 </div>
               </motion.div>
             </div>

@@ -6,9 +6,9 @@ const executives = [
   {
     name: "Manish Kothary",
     role: "Chief Executive Officer",
-    tags: ["Hydrogen Systems", "Scaling Ventures", "Industrial Infrastructure"],
-    quote: "Developing scalable hydrogen and plasma-based energy systems for industrial decarbonisation.",
-    background: "Entrepreneur and technology founder developing scalable plasma-based energy systems for industrial decarbonisation. Brings 25+ years of experience building and scaling ventures across technology, financial platforms and industrial infrastructure. Previously senior roles at Barclays Global Investors, Wells Fargo and Pacific Gas & Electric. M.Sc Computer Science, University of South Carolina; BE Electrical Engineering, IIT Roorkee.",
+    tags: ["Critical Minerals", "Scaling Ventures", "Industrial Infrastructure"],
+    quote: "Developing scalable critical mineral recovery platforms and industrial processing systems for decarbonisation.",
+    background: "Entrepreneur and technology founder developing scalable critical mineral recovery platforms and industrial processing systems for decarbonisation. Brings 25+ years of experience building and scaling ventures across technology, financial platforms and industrial infrastructure. Previously senior roles at Barclays Global Investors, Wells Fargo and Pacific Gas & Electric. M.Sc Computer Science, University of South Carolina; BE Electrical Engineering, IIT Roorkee.",
   },
   {
     name: "Vandit Verma",
@@ -21,8 +21,8 @@ const executives = [
     name: "Igor Kuntzevitsky",
     role: "Chief Technology Officer",
     tags: ["Reactor Design", "IP Development", "Patented Pathways"],
-    quote: "Inventor of multiple granted U.S. patents covering hydrogen production pathways and critical mineral recovery systems.",
-    background: "Leads reactor architecture, systems engineering and IP development. Inventor of multiple granted U.S. patents covering production pathways and critical mineral recovery systems (hydrocarbon gas pathways, red mud processing). Expertise spans matrix reactor systems, controlled partial oxidation and integrated gas purification. Masters in Mechanical Engineering, Uzbekistan.",
+    quote: "Inventor of multiple granted U.S. patents covering critical mineral recovery systems and advanced processing architecture.",
+    background: "Leads reactor architecture, systems engineering and IP development. Inventor of multiple granted U.S. patents covering critical mineral recovery systems and advanced processing architecture (red mud processing, rare earth fractionation). Expertise spans matrix reactor systems, controlled partial oxidation and integrated purification. Masters in Mechanical Engineering, Uzbekistan.",
   },
   {
     name: "Prashanth Shetty",
@@ -65,9 +65,9 @@ const advisors = [
   {
     name: "Ranju Mehta",
     role: "Governance & Entrepreneurship Advisor",
-    tags: ["NGO Leadership", "Business Incubation", "Economic Empowerment"],
-    quote: "Awarded internationally as Best Entrepreneurship Educator by NFTE USA. Over 35 years of teaching experience.",
-    background: "Governance and entrepreneurship expert with 35+ years of institutional leadership, now focused on building sustainable ecosystems around rare earth recovery and critical mineral value chains. Director North of I Create India, promoting entrepreneurship and economic empowerment in underserved communities. Spearheaded eight Business Incubation Centres and mentored veterans into enterprise. Advocates for rare earth community development through structured incubation and knowledge transfer. Recognised internationally as Best Entrepreneurship Educator by NFTE USA. Superannuated as Vice-Principal of Kanoria Girls College.",
+    tags: ["Stakeholder Governance", "Community Development", "Critical Mineral Ecosystems"],
+    quote: "Building the institutional and community frameworks that give critical mineral recovery ventures a durable social licence to operate.",
+    background: "Governance and institutional leadership expert with 35+ years of experience translating complex industrial initiatives into sustainable community ecosystems. Brings deep expertise in stakeholder engagement, structured knowledge transfer, and enterprise development — capabilities directly applicable to the social and regulatory dimensions of large-scale bauxite residue remediation and rare earth recovery. Leads I Create India's northern operations, establishing eight Business Incubation Centres that have enabled industrial and enterprise-led economic development in underserved regions. Her model of community-anchored institution-building directly supports the stakeholder alignment and social licence frameworks critical to securing long-term operating mandates for rare earth processing infrastructure. Recognised internationally as Best Entrepreneurship Educator by NFTE USA.",
   }
 ];
 
@@ -89,7 +89,7 @@ export default function TeamPage() {
               </p>
               <div style={{ paddingLeft: '1.5rem', borderLeft: '3px solid #ea580c', background: '#fff7ed', padding: '1.5rem', borderRadius: '0 8px 8px 0' }}>
                 <p style={{ margin: 0, fontStyle: 'italic', color: '#c2410c', fontWeight: 500 }}>
-                  &ldquo;Technical leadership anchored by the Chief Technology Officer responsible for reactor design and hydrogen systems engineering.&rdquo;
+                  &ldquo;Technical leadership anchored by the Chief Technology Officer responsible for reactor design and critical mineral extraction systems.&rdquo;
                 </p>
               </div>
             </div>

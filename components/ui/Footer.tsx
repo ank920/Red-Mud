@@ -37,6 +37,7 @@ export function Footer() {
                         <h4>Platform</h4>
                         <ul>
                             <li><Link href="/technology">Technology &amp; Process</Link></li>
+                            <li><Link href="/economics">Economics</Link></li>
                             <li><Link href="/outputs">Recovered Outputs</Link></li>
                             <li><Link href="/esg">ESG &amp; Impact</Link></li>
                         </ul>
